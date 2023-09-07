@@ -1,0 +1,14 @@
+site:
+  title: "PhoenixRedwolf Digital Services"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/developmentExecutable/prodweb.js"
+      api: "build/libs/prodweb.jar"
+    prod:
+      script: "build/distributions/prodweb.js"
+      siteRoot: ".kobweb/site"
+
+  port: 8080
