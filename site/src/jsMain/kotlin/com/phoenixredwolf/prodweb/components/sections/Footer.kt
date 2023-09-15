@@ -6,6 +6,7 @@ import com.phoenixredwolf.prodweb.theme.LinkBaseStyle
 import com.phoenixredwolf.prodweb.theme.primaryGradient
 import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.css.TextAlign
+import com.varabyte.kobweb.compose.css.Width
 import com.varabyte.kobweb.compose.dom.ref
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -16,10 +17,14 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.icons.fa.FaCopyright
+import com.varabyte.kobweb.silk.components.layout.SimpleGrid
+import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.navigation.Link
+import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
 import kotlinx.browser.document
+import org.jetbrains.compose.web.css.keywords.auto
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.P
@@ -36,10 +41,40 @@ fun Footer(modifier: Modifier = Modifier, breakpoint: Breakpoint) {
                 .backgroundImage(primaryGradient),
             contentAlignment = Alignment.Center
         ) {
-            if (breakpoint >= Breakpoint.MD) {
-                FooterHorizontal(breakpoint)
-            } else {
-                FooterVertical(breakpoint)
+            SimpleGrid(
+                modifier = Modifier
+                    .fillMaxWidth(90.percent),
+                numColumns = numColumns(base = 1, md=3)
+            ){
+                Row(
+                    modifier = Modifier.padding(topBottom = 10.px),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    SocialBar(true)
+                }
+                Row(
+                    modifier = Modifier.padding(topBottom = 10.px),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    FooterMenu()
+
+                }
+                Row(
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column(
+                        modifier = Modifier.margin(bottom = 15.px),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Copyright()
+                        PrivacyPolicyLink()
+                        CreditPage()
+                    }
+                }
             }
         }
     }
@@ -53,61 +88,11 @@ fun Footer(modifier: Modifier = Modifier, breakpoint: Breakpoint) {
 }
 
 @Composable
-private fun FooterHorizontal(breakpoint: Breakpoint) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize(90.percent)
-            .padding(topBottom = 20.px)
-            .fillMaxHeight(),
-        verticalArrangement = Arrangement.SpaceBetween,
-        horizontalAlignment = Alignment.CenterHorizontally
+private fun FooterMenu() {
+    SimpleGrid(
+        modifier = Modifier.width(auto),
+        numColumns = numColumns(base = 1, lg = 2)
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            SocialBar(true)
-            Column {
-                PrivacyPolicyLink()
-                CreditPage()
-            }
-            Copyright(breakpoint)
-            FooterMenu(breakpoint)
-        }
-    }
-}
-
-@Composable
-private fun FooterVertical(breakpoint: Breakpoint) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth(90.percent)
-            .fillMaxHeight()
-            .padding(topBottom = 25.px)
-            .margin(topBottom = 25.px),
-        verticalArrangement = Arrangement.SpaceBetween,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        SocialBar(true)
-        FooterMenu(breakpoint, true)
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Column {
-                PrivacyPolicyLink()
-                CreditPage()
-            }
-            Copyright(breakpoint)
-        }
-    }
-}
-
-@Composable
-private fun FooterMenu(breakpoint: Breakpoint, vert:Boolean = false) {
-    if (vert) {
         Row(
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
@@ -135,6 +120,7 @@ private fun FooterMenu(breakpoint: Breakpoint, vert:Boolean = false) {
             )
         }
         Row(
+            modifier = GridRowStyle.toModifier(),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -153,48 +139,6 @@ private fun FooterMenu(breakpoint: Breakpoint, vert:Boolean = false) {
                 text = "Contact"
             )
         }
-    } else {
-        Row(
-            horizontalArrangement = Arrangement.End,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Link(
-                modifier = LinkBaseStyle.toModifier()
-                    .padding(leftRight = 10.px)
-                    .fontSize(FontSize.Large),
-                path = "/",
-                text = "Home"
-            )
-            Link(
-                modifier = LinkBaseStyle.toModifier()
-                    .padding(leftRight = 10.px)
-                    .fontSize(FontSize.Large),
-                path = "/services",
-                text = "Services"
-            )
-            Link(
-                modifier = LinkBaseStyle.toModifier()
-                    .padding(leftRight = 10.px)
-                    .fontSize(FontSize.Large),
-                path = "/consult",
-                text = "Consult"
-            )
-            Link(
-                modifier = LinkBaseStyle.toModifier()
-                    .padding(leftRight = 10.px)
-                    .fontSize(FontSize.Large),
-                path = "/about",
-                text = "About"
-            )
-            Link(
-                modifier = LinkBaseStyle.toModifier()
-                    .padding(leftRight = 10.px)
-                    .fontSize(FontSize.Large),
-                path = "/contact",
-                text = "Contact"
-            )
-        }
-
     }
 }
 
@@ -222,12 +166,9 @@ private fun CreditPage() {
 }
 
 @Composable
-private fun Copyright(breakpoint: Breakpoint) {
+private fun Copyright() {
     P(
-        attrs = Modifier
-            .textAlign(TextAlign.Center)
-            .fontSize(FontSize.Small)
-            .padding( top = if (breakpoint >= Breakpoint.MD) 25.px else 15.px)
+        attrs = CopyrightStyle.toModifier()
             .toAttrs()
     ) {
         FaCopyright(
@@ -237,3 +178,25 @@ private fun Copyright(breakpoint: Breakpoint) {
     }
 }
 
+// Style
+val CopyrightStyle by ComponentStyle {
+    base {
+        Modifier
+            .textAlign(TextAlign.Center)
+            .fontSize(FontSize.Small)
+            .padding(top = 15.px)
+    }
+    Breakpoint.MD {
+        Modifier
+            .padding(top = 25.px)
+    }
+}
+
+val GridRowStyle by ComponentStyle {
+    base {
+        Modifier.width(auto)
+    }
+    Breakpoint.LG {
+        Modifier.width(Width.MinContent)
+    }
+}
