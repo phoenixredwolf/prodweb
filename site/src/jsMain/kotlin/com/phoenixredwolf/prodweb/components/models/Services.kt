@@ -257,5 +257,58 @@ enum class Services: BaseService {
             modifier = Modifier.padding(right = 20.px),
             size = IconSize.LG
         )
+    },
+    TRAIN{
+        override val id: String
+            get() = "train"
+        override val path: String
+            get() = "/train"
+        override val title: String
+            get() = "Training"
+        override val desc: String
+            get() = "Let us create customized training for your staff. From MS Office to cyber security, we have what you need!"
+        override val imgPath: String
+            get() = Res.Image.train
+        override val imgDesc: String
+            get() = "Training Image"
+        override val imgCreditPath: String
+            get() = "https://www.freepik.com/free-photo/beginner-average-skilled-expert-productivity_16459783.htm#query=technology%20training&position=19&from_view=search&track=ais"
+        override val imgCredit: String
+            get() = "rawpixel.com"
+        override val freepikImg: Boolean
+            get() = false
+
+        @Composable
+        override fun icon() = FaSchool(
+            modifier = Modifier.padding(right = 20.px),
+            size = IconSize.LG
+        )
+    },
+    STAFF{
+        override val id: String
+            get() = "staff"
+        override val path: String
+            get() = "/staffing"
+        override val title: String
+            get() = "Technical Staffing"
+        override val desc: String
+            get() = "We can fulfill your short or long term technical staffing needs. Let's talk about the skills your looking for."
+        override val imgPath: String
+            get() = Res.Image.recruit
+        override val imgDesc: String
+            get() = "Recruiting Image"
+        override val imgCreditPath: String
+            get() = "https://www.freepik.com/free-photo/human-resources-concept-with-hand_42089111.htm#query=technical%20recruiting&position=2&from_view=search&track=ais"
+        override val imgCredit: String
+            get() = "Freepik"
+        override val freepikImg: Boolean
+            get() = true
+
+        @Composable
+        override fun icon() = FaUserGroup(
+            modifier = Modifier.padding(right = 20.px),
+            size = IconSize.LG
+        )
+
     }
 }

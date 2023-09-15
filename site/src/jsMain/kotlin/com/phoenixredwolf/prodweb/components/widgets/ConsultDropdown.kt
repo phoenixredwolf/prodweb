@@ -1,9 +1,11 @@
 package com.phoenixredwolf.prodweb.components.widgets
 
 import androidx.compose.runtime.Composable
+import com.phoenixredwolf.prodweb.components.models.Consulting
 import com.phoenixredwolf.prodweb.theme.Dropdowncardstyle
 import com.phoenixredwolf.prodweb.theme.NavItemStyle
 import com.phoenixredwolf.prodweb.theme.NavStyle
+import com.phoenixredwolf.prodweb.theme.primaryLight
 import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.css.Width
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -12,10 +14,12 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.silk.components.icons.fa.*
+import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.H2
+import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun ConsultDropdown() {
@@ -25,67 +29,82 @@ fun ConsultDropdown() {
             .margin(10.px)
             .padding(10.px)
             .width(Width.FitContent),
-        verticalArrangement = Arrangement.SpaceEvenly
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row(
-            modifier = Dropdowncardstyle.toModifier(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            FaLaptop(
-                modifier = Modifier.padding(right = 20.px),
-                size = IconSize.LG
-            )
-            Link(
-                path = "/consult/itconsult",
-                text = "IT Consulting",
-                modifier = NavItemStyle.toModifier()
-                    .textDecorationLine(TextDecorationLine.None)
+            modifier = Modifier
+                .classNames("drop-item")
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
+        ){
+            H2(
+                attrs = Modifier
+                    .color(primaryLight)
+                    .toAttrs(),
+                content = { Text("Featured Services") }
             )
         }
         Row(
-            modifier = Dropdowncardstyle.toModifier(),
-            verticalAlignment = Alignment.CenterVertically
+            modifier = NavStyle.toModifier()
+                .classNames("drop-item"),
+            horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            FaGears(
-                modifier = Modifier.padding(right = 20.px),
-                size = IconSize.LG
-            )
-            Link(
-                path = "/consult/itoper",
-                text = "Operations",
-                modifier = NavItemStyle.toModifier()
-                    .textDecorationLine(TextDecorationLine.None)
-            )
-        }
-        Row(
-            modifier = Dropdowncardstyle.toModifier(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            FaShield(
-                modifier = Modifier.padding(right = 20.px),
-                size = IconSize.LG
-            )
-            Link(
-                path = "/consult/cyber",
-                text = "Cyber Security",
-                modifier = NavItemStyle.toModifier()
-                    .textDecorationLine(TextDecorationLine.None)
-            )
-        }
-        Row(
-            modifier = Dropdowncardstyle.toModifier(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            FaHurricane(
-                modifier = Modifier.padding(right = 20.px),
-                size = IconSize.LG
-            )
-            Link(
-                path = "/consult/risk",
-                text = "Risk Assessments",
-                modifier = NavItemStyle.toModifier()
-                    .textDecorationLine(TextDecorationLine.None)
-            )
+            Column(
+                modifier = Modifier
+                    .margin(leftRight = 5.px)
+            ) {
+                Consulting.values().take(4).forEach { consult ->
+                    Row(
+                        modifier = Dropdowncardstyle.toModifier(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        consult.icon()
+                        Link(
+                            path = consult.path,
+                            text = consult.title,
+                            modifier = NavItemStyle.toModifier()
+                                .textDecorationLine(TextDecorationLine.None)
+                        )
+                    }
+                }
+            }
+            Column(
+                modifier = Modifier
+                    .margin(leftRight = 5.px)
+            ) {
+                Consulting.values().drop(4).take(3).forEach { consult ->
+                    Row(
+                        modifier = Dropdowncardstyle.toModifier(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Row(
+                            modifier = Modifier.width(50.px)
+                        ) {
+                            consult.icon()
+                        }
+                        Link(
+                            path = consult.path,
+                            text = consult.title,
+                            modifier = NavItemStyle.toModifier()
+                                .textDecorationLine(TextDecorationLine.None)
+                        )
+                    }
+                }
+                Row(
+                    modifier = Dropdowncardstyle.toModifier(),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(
+                        modifier = Modifier.width(50.px)
+                    ) {}
+                    Link(
+                        path = "/consult",
+                        text = "Other Services",
+                        modifier = NavItemStyle.toModifier()
+                            .textDecorationLine(TextDecorationLine.None)
+                    )
+                }
+            }
         }
     }
 }

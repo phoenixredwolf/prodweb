@@ -39,5 +39,9 @@ object Res {
         const val risk = "/images/risk.jpg"
         const val voip = "/images/telesystems.jpg"
         const val ucaas = "/images/ucaas.jpg"
+        const val train = "/images/training.jpg"
+        const val recruit = "/images/recruiting.jpg"
+        const val transform = "/images/transform.jpg"
+        const val brand = "/images/branding.jpg"
     }
 }

@@ -8,32 +8,6 @@ import com.varabyte.kobweb.silk.components.icons.fa.*
 import org.jetbrains.compose.web.css.px
 
 enum class Consulting: BaseService {
-    POS {
-        override val id: String
-            get() = "pos"
-        override val path: String
-            get() = "http://localpartners.toasttab.com/register-advocate/referred-by/BarretVogtman/"
-        override val title: String
-            get() = "Point of Sale Systems"
-        override val desc: String
-            get() = "Excellent and efficient Point of Sale Systems are available through our partner."
-        override val imgPath: String
-            get() = Res.Image.possystem
-        override val imgDesc: String
-            get() = "Point of Sale Systems Image"
-        override val imgCreditPath: String
-            get() = "https://www.freepik.com/free-photo/close-up-hand-paying-with-smartphone_21745149.htm#page=3&query=Point%20of%20Sale%20Systems&position=11&from_view=search&track=ais"
-        override val imgCredit: String
-            get() = "Freepik"
-        override val freepikImg: Boolean
-            get() = true
-
-        @Composable
-        override fun icon() = FaCreditCard(
-            modifier = Modifier.padding(right = 20.px),
-            size = IconSize.LG
-        )
-    },
     ITC{
         override val id: String
             get() = "itcon"
@@ -112,6 +86,33 @@ enum class Consulting: BaseService {
             size = IconSize.LG
         )
     },
+    INNOVATE{
+        override val id: String
+            get() = "innovate"
+        override val path: String
+            get() = "/innovate"
+        override val title: String
+            get() = "Business Innovations"
+        override val desc: String
+            get() = "Evolving your business to match changing consumer needs and market landscapes. Launching your business to the future."
+        override val imgPath: String
+            get() = Res.Image.transform
+        override val imgDesc: String
+            get() = "Business Innovations images"
+        override val imgCreditPath: String
+            get() = "https://www.freepik.com/free-photo/innovation-technology-be-creative-futuristic-concept_18125596.htm#query=Business%20Transformations&position=0&from_view=search&track=ais"
+        override val imgCredit: String
+            get() = "rawpixel.com"
+        override val freepikImg: Boolean
+            get() = false
+
+        @Composable
+        override fun icon() = FaRightLeft(
+            modifier = Modifier.padding(right = 20.px),
+            size = IconSize.LG
+        )
+
+    },
     RISK {
         override val id: String
             get() = "risk"
@@ -138,6 +139,83 @@ enum class Consulting: BaseService {
             size = IconSize.LG
         )
 
-    }
+    },
+    RECRUIT{
+        override val id: String
+            get() = "recruit"
+        override val path: String
+            get() = "/recruiting"
+        override val title: String
+            get() = "Technical Recruiting"
+        override val desc: String
+            get() = "Need help finding the right technical people to add to your team? Let our experts help you!"
+        override val imgPath: String
+            get() = Res.Image.recruit
+        override val imgDesc: String
+            get() = "Recruiting Image"
+        override val imgCreditPath: String
+            get() = "https://www.freepik.com/free-photo/human-resources-concept-with-hand_42089111.htm#query=technical%20recruiting&position=2&from_view=search&track=ais"
+        override val imgCredit: String
+            get() = "Freepik"
+        override val freepikImg: Boolean
+            get() = true
 
+        @Composable
+        override fun icon() = FaUserGroup(
+            modifier = Modifier.padding(right = 20.px),
+            size = IconSize.LG
+        )
+    },
+    BRAND{
+        override val id: String
+            get() = "brand"
+        override val path: String
+            get() = "/branding"
+        override val title: String
+            get() = "Brand Marketing Strategy"
+        override val desc: String
+            get() = "Helping you create a memorable brand! We can help with slogans, logos, and icons!"
+        override val imgPath: String
+            get() = Res.Image.brand
+        override val imgDesc: String
+            get() = "Branding Image"
+        override val imgCreditPath: String
+            get() = "https://www.freepik.com/free-photo/business-marketing-strategy_15438607.htm#query=Branding&position=14&from_view=search&track=sph"
+        override val imgCredit: String
+            get() = "rawpixel.com"
+        override val freepikImg: Boolean
+            get() = false
+
+        @Composable
+        override fun icon() = FaRankingStar(
+            modifier = Modifier.padding(right = 20.px),
+            size = IconSize.LG
+        )
+    },
+    POS {
+        override val id: String
+            get() = "pos"
+        override val path: String
+            get() = "http://localpartners.toasttab.com/register-advocate/referred-by/BarretVogtman/"
+        override val title: String
+            get() = "Point of Sale Systems"
+        override val desc: String
+            get() = "Excellent and efficient Point of Sale Systems are available through our partner."
+        override val imgPath: String
+            get() = Res.Image.possystem
+        override val imgDesc: String
+            get() = "Point of Sale Systems Image"
+        override val imgCreditPath: String
+            get() = "https://www.freepik.com/free-photo/close-up-hand-paying-with-smartphone_21745149.htm#page=3&query=Point%20of%20Sale%20Systems&position=11&from_view=search&track=ais"
+        override val imgCredit: String
+            get() = "Freepik"
+        override val freepikImg: Boolean
+            get() = true
+
+        @Composable
+        override fun icon() = FaCreditCard(
+            modifier = Modifier.padding(right = 20.px),
+            size = IconSize.LG
+        )
+    }
 }

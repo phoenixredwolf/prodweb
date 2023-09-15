@@ -22,8 +22,6 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.A
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
 @Page
@@ -51,21 +49,31 @@ fun CreditPage() {
         ) {
             SimpleGrid(
                 numColumns = numColumns(1, 1,2,3,4),
-                modifier = Modifier.columnGap(10.px)
+                modifier = Modifier.columnGap(10.px).rowGap(10.px)
             ) {
                 Services.values().forEach { service ->
-                    Div(
-                        attrs = Modifier.padding(topBottom = 20.px).toAttrs()
+                    Column(
+                        modifier = Modifier.padding(topBottom = 20.px)
                     ) {
-                        Image(
-                            src = service.imgPath,
-                            modifier = Modifier.width(350.px)
+                        Row(
+                            modifier = Modifier.fillMaxSize(),
+                            horizontalArrangement = Arrangement.Center,
+                            content = {
+                                Image(
+                                    src = service.imgPath,
+                                    modifier = Modifier.width(300.px)
+                                )
+                            }
                         )
-                        P(
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Center,
+                            verticalAlignment = Alignment.Bottom
                         ) {
                             Text("Image by ")
                             A(
                                 attrs = Modifier
+                                    .padding(leftRight = 6.px)
                                     .attrsModifier {
                                         attr("href", service.imgCreditPath)
                                     }
@@ -77,18 +85,28 @@ fun CreditPage() {
                     }
                 }
                 Consulting.values().forEach {consult ->
-                    Div(
-                        attrs = Modifier.padding(topBottom = 20.px).toAttrs()
+                    Column(
+                        modifier = Modifier.padding(topBottom = 20.px)
                     ) {
-                        Image(
-                            src = consult.imgPath,
-                            modifier = Modifier.width(350.px)
+                        Row(
+                            modifier = Modifier.fillMaxSize(),
+                            horizontalArrangement = Arrangement.Center,
+                            content = {
+                                Image(
+                                    src = consult.imgPath,
+                                    modifier = Modifier.width(300.px)
+                                )
+                            }
                         )
-                        P(
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Center,
+                            verticalAlignment = Alignment.Bottom
                         ) {
                             Text("Image by ")
                             A(
                                 attrs = Modifier
+                                    .padding(leftRight = 6.px)
                                     .attrsModifier {
                                         attr("href", consult.imgCreditPath)
                                     }

@@ -5,7 +5,7 @@ import org.jetbrains.compose.web.css.CSSColorValue
 
 val outerColor = com.varabyte.kobweb.compose.ui.graphics.Color
 
-val md_theme_light_primary = Color(0xFF3E3EF7)
+val md_theme_light_primary = Color(0xFF2117E3)
 val md_theme_light_onPrimary = Color(0xFFFFFFFF)
 val md_theme_light_primaryContainer = Color(0xFFE1E0FF)
 val md_theme_light_onPrimaryContainer = Color(0xFF06006C)
