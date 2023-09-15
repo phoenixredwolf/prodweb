@@ -18,7 +18,7 @@ import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.dom.H2
+import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
@@ -37,11 +37,11 @@ fun ConsultDropdown() {
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ){
-            H2(
+            H3(
                 attrs = Modifier
                     .color(primaryLight)
                     .toAttrs(),
-                content = { Text("Featured Services") }
+                content = { Text("Consulting Services") }
             )
         }
         Row(

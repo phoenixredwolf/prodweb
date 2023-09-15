@@ -206,7 +206,7 @@ private fun ServiceButtons(compact: Boolean = false) {
                 ) {
                     Text("I'm not sure what I need.")
                 }
-                NavButton("Consultations", "")
+                NavButton("Consultations", "/consult")
             }
             Column(
                 modifier = Modifier.fillMaxWidth().padding(left = 5.px),
@@ -221,7 +221,7 @@ private fun ServiceButtons(compact: Boolean = false) {
                 ) {
                     Text("I know what service I want.")
                 }
-                NavButton("Services", "/services")
+                NavButton("Services", "/service")
             }
         }
     }
@@ -302,7 +302,7 @@ private fun ContactOrSched(breakpoint: Breakpoint) {
                 .fontWeight(FontWeight.SemiBold)
                 .textDecorationLine(TextDecorationLine.None),
             path = "/contact",
-            text = "Contact"
+            text = "Contact Us "
         )
         Text(" or ")
         Link(
