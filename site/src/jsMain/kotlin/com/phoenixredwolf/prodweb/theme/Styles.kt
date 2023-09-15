@@ -151,6 +151,6 @@ val Dropdowncardstyle by ComponentStyle {
     }
     hover {
         Modifier
-            .boxShadow(3.px, 3.px, color = Colors.DarkGray)
+            .boxShadow(3.px, 3.px, blurRadius = 5.px, color = Colors.DarkGray)
     }
 }

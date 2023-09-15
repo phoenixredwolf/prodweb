@@ -6,7 +6,8 @@ import com.phoenixredwolf.prodweb.components.layouts.PageLayout
 import com.phoenixredwolf.prodweb.components.widgets.CircleCard
 import com.phoenixredwolf.prodweb.components.widgets.NavButton
 import com.phoenixredwolf.prodweb.components.widgets.PageTitle
-import com.phoenixredwolf.prodweb.theme.NavItemStyle
+import com.phoenixredwolf.prodweb.theme.onPrimaryContainerLight
+import com.phoenixredwolf.prodweb.theme.onTertiaryContainerLight
 import com.phoenixredwolf.prodweb.utility.Constants
 import com.phoenixredwolf.prodweb.utility.Constants.CONTACT
 import com.phoenixredwolf.prodweb.utility.Res
@@ -17,16 +18,19 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.attrsModifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.components.graphics.Image
+import com.varabyte.kobweb.silk.components.layout.SimpleGrid
+import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.navigation.Link
+import com.varabyte.kobweb.silk.components.style.*
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
-import com.varabyte.kobweb.silk.components.style.toModifier
-import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.cssRem
+import org.jetbrains.compose.web.css.ms
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.*
@@ -36,7 +40,6 @@ import org.jetbrains.compose.web.dom.*
 fun HomePage() {
     val title = "Your Partner in Digital Solutions | Web and Software Development Services"
     val description = "We offer expert web and software development, hosting, and administration services. Transform your ideas into reality with our cutting-edge solutions."
-    val breakpoint = rememberBreakpoint()
     val colorMode by ColorMode.currentState
 
     PageLayout(title = title, description = description) {
@@ -70,38 +73,37 @@ fun HomePage() {
                     verticalArrangement = Arrangement.SpaceEvenly
                 ) {
                     H1(
-                        attrs = Modifier
+                        attrs = IndexH1Style.toModifier()
                             .classNames("w-full")
-                            .fillMaxWidth()
-                            .fontWeight(FontWeight.Bold)
-                            .fontSize(if(breakpoint >= Breakpoint.MD) 5.cssRem else 2.cssRem)
-                            .textAlign(TextAlign.Center)
                             .toAttrs(),
                         content = { Text("IT Solutions") }
                     )
                     H3(
-                        attrs = Modifier
-                            .fillMaxWidth()
-                            .fontSize(if(breakpoint >= Breakpoint.MD) 3.cssRem else (1.5).cssRem)
-                            .textAlign(TextAlign.Center)
+                        attrs = IndexH3Style.toModifier()
                             .toAttrs(),
                         content = { Text("Implementation, Consulting, & Support") }
                     )
-                    Image(
-                        src = if (breakpoint <= Breakpoint.SM) Res.Image.tag2 else Res.Image.tag1,
-                        modifier = Modifier
-                            .width(90.percent)
-                            .padding(topBottom = 10.px)
-                    )
+                    Picture(
+                        attrs = Modifier.fillMaxWidth().toAttrs()
+                    ) {
+                        Source(
+                            attrs = Modifier
+                                .attrsModifier {
+                                    attr("media", "(min-width:577px)")
+                                    attr("srcset", Res.Image.tag1)
+                                }
+                                .toAttrs()
+                        )
+                        Image(
+                            src = Res.Image.tag2,
+                            modifier = Modifier
+                                .width(90.percent)
+                        )
+                    }
                 }
             }
             P(
-                attrs = Modifier
-                    .padding(top = 10.px)
-                    .fillMaxWidth()
-                    .fontSize(if(breakpoint >= Breakpoint.MD) 2.cssRem else (1.25).cssRem)
-                    .fontStyle(FontStyle.Italic)
-                    .textAlign(TextAlign.Center)
+                attrs = IndexMainPStyle.toModifier()
                     .toAttrs(),
                 content = { Text("We'll add value to your business and help grow your bottom line!") }
             )
@@ -115,17 +117,7 @@ fun HomePage() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceBetween
         ) {
-            Row(
-                modifier = Modifier
-                    .padding(topBottom = 20.px)
-                    .fillMaxWidth()
-            ) {
-                if (breakpoint >= Breakpoint.MD) {
-                    ServiceButtons()
-                } else {
-                    ServiceButtons(true)
-                }
-            }
+            ServiceButtons()
             Row(
                 modifier = Modifier
                     .padding(topBottom = 20.px)
@@ -134,182 +126,91 @@ fun HomePage() {
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                if (breakpoint <= Breakpoint.MD) {
-                    IndexCircleCards(true)
-                } else {
-                    IndexCircleCards()
-                }
+                IndexCircleCards()
             }
-            ContactOrSched(breakpoint)
+            ContactOrSched()
         }
 
     }
 }
-
 @Composable
-private fun ServiceButtons(compact: Boolean = false) {
-    if (compact) {
+fun ServiceButtons() {
+    SimpleGrid(
+        modifier = Modifier.fillMaxWidth()
+            .height(Height.MaxContent),
+        numColumns = numColumns(base = 1, md = 2)
+    ) {
         Column(
-            modifier = Modifier
-                .fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().padding(10.px),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Column(
-                modifier = Modifier.fillMaxWidth().padding(10.px),
-                horizontalAlignment = Alignment.CenterHorizontally
+            P(
+                attrs = ServiceButtonStyle.toModifier()
+                    .toAttrs()
             ) {
-                P(
-                    attrs = Modifier
-                        .fontSize(FontSize.Medium)
-                        .fontWeight(FontWeight.SemiBold)
-                        .textAlign(TextAlign.Center)
-                        .toAttrs()
-                ) {
-                    Text("I'm not sure what I need.")
-                }
-                NavButton("Consultations", "")
+                Text("I'm not sure what I need.")
             }
-            Column(
-                modifier = Modifier.fillMaxWidth().padding(10.px),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                P(
-                    attrs = Modifier
-                        .fontSize(FontSize.Medium)
-                        .fontWeight(FontWeight.SemiBold)
-                        .textAlign(TextAlign.Center)
-                        .toAttrs()
-                ) {
-                    Text("I know what service I want.")
-                }
-                NavButton("Services", "/services")
-            }
+            NavButton("Consultations", "")
         }
-    } else {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(Height.MaxContent),
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Column(
-                modifier = Modifier.fillMaxWidth().padding(right =5.px),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                P(
-                    attrs = Modifier
-                        .fontSize(FontSize.XLarge)
-                        .fontWeight(FontWeight.SemiBold)
-                        .textAlign(TextAlign.Center)
-                        .toAttrs()
-                ) {
-                    Text("I'm not sure what I need.")
-                }
-                NavButton("Consultations", "/consult")
-            }
-            Column(
-                modifier = Modifier.fillMaxWidth().padding(left = 5.px),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                P(
-                    attrs = Modifier
-                        .fontSize(FontSize.XLarge)
-                        .fontWeight(FontWeight.SemiBold)
-                        .textAlign(TextAlign.Center)
-                        .toAttrs()
-                ) {
-                    Text("I know what service I want.")
-                }
-                NavButton("Services", "/service")
-            }
-        }
-    }
-}
-
-@Composable
-private fun IndexCircleCards(vertical : Boolean = false) {
-    if (vertical) {
         Column(
-            modifier = Modifier
-                .fillMaxWidth(90.percent),
-            verticalArrangement = Arrangement.SpaceEvenly,
+            modifier = Modifier.fillMaxWidth().padding(10.px),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Column(
-                modifier = Modifier.padding(topBottom = 20.px)
+            P(
+                attrs = ServiceButtonStyle.toModifier()
+                    .toAttrs()
             ) {
-                CircleCard("Initial Consultation", Constants.CONSULT, Res.Image.collaboration)
-
+                Text("I know what service I want.")
             }
-            Column(
-                modifier = Modifier.padding(topBottom = 20.px)
-            ) {
-                CircleCard("Implement Solutions", Constants.IMPLEMENT, Res.Image.webdev)
-
-            }
-            Column(
-                modifier = Modifier.padding(topBottom = 20.px)
-            ) {
-                CircleCard("Train & Support", Constants.SUPPORT, Res.Image.empower)
-
-            }
-
+            NavButton("Services", "/services")
         }
-    } else {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth(90.percent),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Column(
-                modifier = Modifier.height(500.px).padding(leftRight = 10.px)
-            ) {
-                CircleCard("Initial Consultation", Constants.CONSULT, Res.Image.collaboration)
-
-            }
-            Column(
-                modifier = Modifier.height(500.px).padding(leftRight = 10.px)
-            ) {
-                CircleCard("Implement Solutions", Constants.IMPLEMENT, Res.Image.webdev)
-
-            }
-            Column(
-                modifier = Modifier.height(500.px).padding(leftRight = 10.px)
-            ) {
-                CircleCard("Train & Support", Constants.SUPPORT, Res.Image.empower)
-
-            }
-
-        }
-
     }
 }
 
 @Composable
-private fun ContactOrSched(breakpoint: Breakpoint) {
+private fun IndexCircleCards() {
+    SimpleGrid(
+        modifier = Modifier.fillMaxWidth().columnGap(10.px),
+        numColumns = numColumns(base = 1, lg = 3)
+    ) {
+        Column(
+            modifier = Modifier.padding(topBottom = 20.px).height(460.px),
+            verticalArrangement = Arrangement.Center
+        ) {
+            CircleCard("Initial Consultation", Constants.CONSULT, Res.Image.collaboration)
+
+        }
+        Column(
+            modifier = Modifier.padding(topBottom = 20.px).height(460.px),
+            verticalArrangement = Arrangement.Center
+        ) {
+            CircleCard("Implement Solutions", Constants.IMPLEMENT, Res.Image.webdev)
+
+        }
+        Column(
+            modifier = Modifier.padding(topBottom = 20.px).height(460.px),
+            verticalArrangement = Arrangement.Center
+        ) {
+            CircleCard("Train & Support", Constants.SUPPORT, Res.Image.empower)
+
+        }
+    }
+}
+
+@Composable
+private fun ContactOrSched() {
     P(
-        attrs = Modifier
-            .fillMaxWidth()
-            .textAlign(TextAlign.Center)
-            .fontSize(if (breakpoint < Breakpoint.MD) FontSize.Medium else FontSize.XLarge)
+        attrs = ContactPStyle.toModifier()
             .toAttrs()
     ) {
         Link(
-            modifier = NavItemStyle.toModifier()
-                .fontSize(if (breakpoint < Breakpoint.MD) FontSize.Large else FontSize.XXLarge)
-                .fontWeight(FontWeight.SemiBold)
-                .textDecorationLine(TextDecorationLine.None),
+            modifier = ContactLinkStyle.toModifier(),
             path = "/contact",
             text = "Contact Us "
         )
         Text(" or ")
         Link(
-            modifier = NavItemStyle.toModifier()
-                .fontSize(if (breakpoint < Breakpoint.MD) FontSize.Large else FontSize.XXLarge)
-                .fontWeight(FontWeight.SemiBold)
-                .textDecorationLine(TextDecorationLine.None),
+            modifier = ContactLinkStyle.toModifier(),
             path = CONTACT,
             text = "Schedule a call"
         )
@@ -317,4 +218,101 @@ private fun ContactOrSched(breakpoint: Breakpoint) {
         Text("To Get Started!")
     }
 
+}
+
+// Style
+
+val IndexH1Style by ComponentStyle {
+    base {
+        Modifier
+            .fillMaxWidth()
+            .fontWeight(FontWeight.Bold)
+            .fontSize(2.cssRem)
+            .textAlign(TextAlign.Center)
+    }
+    Breakpoint.MD {
+        Modifier
+            .fontSize(5.cssRem)
+    }
+}
+
+val IndexH3Style by ComponentStyle {
+    base {
+        Modifier
+            .fillMaxWidth()
+            .fontSize((1.5).cssRem)
+            .textAlign(TextAlign.Center)
+    }
+    Breakpoint.MD {
+        Modifier
+            .fontSize(3.cssRem)
+    }
+}
+
+val IndexMainPStyle by ComponentStyle {
+    base {
+        Modifier
+            .padding(top = 10.px)
+            .fillMaxWidth()
+            .fontSize((1.25).cssRem)
+            .fontStyle(FontStyle.Italic)
+            .textAlign(TextAlign.Center)
+    }
+    Breakpoint.MD {
+        Modifier
+            .fontSize(2.cssRem)
+    }
+}
+
+val ServiceButtonStyle by ComponentStyle {
+    base {
+        Modifier
+            .fontSize(FontSize.Medium)
+            .fontWeight(FontWeight.SemiBold)
+            .textAlign(TextAlign.Center)
+    }
+    Breakpoint.MD {
+        Modifier
+            .fontSize(FontSize.XLarge)
+            .fontWeight(FontWeight.SemiBold)
+            .textAlign(TextAlign.Center)
+    }
+}
+
+val ContactPStyle by ComponentStyle {
+    base {
+        Modifier
+            .fillMaxWidth()
+            .textAlign(TextAlign.Center)
+            .fontSize(FontSize.Medium)
+    }
+    Breakpoint.MD {
+        Modifier
+            .fontSize(FontSize.XLarge)
+    }
+}
+
+val ContactLinkStyle by ComponentStyle {
+    base {
+        Modifier
+            .color(onPrimaryContainerLight)
+            .fontWeight(FontWeight.SemiBold)
+            .fontSize(FontSize.Large)
+            .textDecorationLine(TextDecorationLine.None)
+            .transition(CSSTransition(property = "color", duration = 200.ms))
+    }
+    anyLink {
+        Modifier
+            .color(onPrimaryContainerLight)
+            .fontWeight(FontWeight.SemiBold)
+            .textDecorationLine(TextDecorationLine.None)
+    }
+    hover {
+        Modifier
+            .color(onTertiaryContainerLight)
+    }
+    (Breakpoint.MD + anyLink) {
+        Modifier
+            .fontSize(FontSize.XXLarge)
+    }
 }
