@@ -2,7 +2,7 @@ package com.phoenixredwolf.prodweb.utility
 
 object Constants {
     const val LINKEDIN = "https://www.linkedin.com/company/phoenixredwolf"
-    const val FACEBOOK = "https://www.facebook.com/PhoenixRedwolfDigitalSolutions"
+    const val FACEBOOK = "https://www.facebook.com/PhoenixRedwolfDigitalServices"
     const val CONSULT = "Start with an initial consultation to determine what the needs of your business are."
     const val IMPLEMENT = "Next we'll build a roadmap, create, and implement the perfect solutions."
     const val SUPPORT = "Train all members of your business on the new systems. Provide additional support as needed."
