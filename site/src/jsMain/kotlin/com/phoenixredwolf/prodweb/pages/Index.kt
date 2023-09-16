@@ -9,6 +9,7 @@ import com.phoenixredwolf.prodweb.components.widgets.PageTitle
 import com.phoenixredwolf.prodweb.theme.onPrimaryContainerLight
 import com.phoenixredwolf.prodweb.theme.onTertiaryContainerLight
 import com.phoenixredwolf.prodweb.utility.Constants
+import com.phoenixredwolf.prodweb.utility.Constants.CONTACT
 import com.phoenixredwolf.prodweb.utility.Res
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -149,7 +150,7 @@ fun ServiceButtons() {
             ) {
                 Text("I'm not sure what I need.")
             }
-            NavButton("Consultations", "")
+            NavButton("Consultations", "/consult")
         }
         Column(
             modifier = Modifier.fillMaxWidth().padding(10.px),
@@ -161,7 +162,7 @@ fun ServiceButtons() {
             ) {
                 Text("I know what service I want.")
             }
-            NavButton("Services", "/services")
+            NavButton("Services", "/service")
         }
     }
 }
@@ -208,6 +209,13 @@ private fun ContactOrSched() {
             text = "Contact Us "
         )
         Text(" or ")
+        Link(
+            modifier = ContactLinkStyle.toModifier(),
+            path = CONTACT,
+            text = "Schedule a call"
+        )
+        Br()
+        Text("To Get Started!")
     }
 
 }
