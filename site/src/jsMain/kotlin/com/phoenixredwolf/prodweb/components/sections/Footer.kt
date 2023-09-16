@@ -32,7 +32,7 @@ import org.jetbrains.compose.web.dom.Text
 import kotlin.js.Date
 
 @Composable
-fun Footer(modifier: Modifier = Modifier, breakpoint: Breakpoint) {
+fun Footer(modifier: Modifier = Modifier) {
     Row(Modifier.fillMaxWidth().then(modifier)) {
         Box(
             modifier = Modifier
@@ -59,7 +59,6 @@ fun Footer(modifier: Modifier = Modifier, breakpoint: Breakpoint) {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     FooterMenu()
-
                 }
                 Row(
                     horizontalArrangement = Arrangement.Center,
@@ -88,33 +87,31 @@ fun Footer(modifier: Modifier = Modifier, breakpoint: Breakpoint) {
 }
 
 @Composable
-private fun FooterMenu() {
+fun FooterMenu() {
     SimpleGrid(
         modifier = Modifier.width(auto),
         numColumns = numColumns(base = 1, lg = 2)
     ) {
         Row(
+            modifier = Modifier,
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Link(
                 modifier = LinkBaseStyle.toModifier()
-                    .padding(leftRight = 10.px)
-                    .fontSize(FontSize.Medium),
+                    .padding(leftRight = 10.px),
                 path = "/",
                 text = "Home"
             )
             Link(
                 modifier = LinkBaseStyle.toModifier()
-                    .padding(leftRight = 10.px)
-                    .fontSize(FontSize.Medium),
-                path = "/services",
+                    .padding(leftRight = 10.px),
+                path = "/service",
                 text = "Services"
             )
             Link(
                 modifier = LinkBaseStyle.toModifier()
-                    .padding(leftRight = 10.px)
-                    .fontSize(FontSize.Medium),
+                    .padding(leftRight = 10.px),
                 path = "/consult",
                 text = "Consult"
             )
@@ -126,15 +123,13 @@ private fun FooterMenu() {
         ) {
             Link(
                 modifier = LinkBaseStyle.toModifier()
-                    .padding(leftRight = 10.px)
-                    .fontSize(FontSize.Medium),
+                    .padding(leftRight = 10.px),
                 path = "/about",
                 text = "About"
             )
             Link(
                 modifier = LinkBaseStyle.toModifier()
-                    .padding(leftRight = 10.px)
-                    .fontSize(FontSize.Medium),
+                    .padding(leftRight = 10.px),
                 path = "/contact",
                 text = "Contact"
             )

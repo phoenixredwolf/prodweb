@@ -6,11 +6,13 @@ import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.anyLink
+import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.hover
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.JustifyContent
+import org.jetbrains.compose.web.css.keywords.auto
 
 // Links
 val LinkBaseStyle by ComponentStyle {
@@ -18,6 +20,7 @@ val LinkBaseStyle by ComponentStyle {
         Modifier
             .color(if(colorMode == ColorMode.LIGHT) onPrimaryContainerLight else onPrimaryContainerDark)
             .fontWeight(FontWeight.SemiBold)
+            .fontSize(FontSize.Large)
             .textDecorationLine(TextDecorationLine.None)
             .transition(CSSTransition(property = "color", duration = 200.ms))
     }
@@ -152,5 +155,117 @@ val Dropdowncardstyle by ComponentStyle {
     hover {
         Modifier
             .boxShadow(3.px, 3.px, blurRadius = 5.px, color = Colors.DarkGray)
+    }
+}
+
+// Services
+val ServicePHeadingStyle by ComponentStyle {
+    base {
+        Modifier
+            .fontWeight(FontWeight.SemiBold)
+            .textAlign(TextAlign.Justify)
+            .zIndex(1)
+            .fillMaxWidth()
+    }
+    Breakpoint.MD {
+        Modifier
+            .fillMaxWidth(40.percent)
+    }
+
+}
+
+val ServiceCBRowStyle by ComponentStyle {
+    base {
+        Modifier
+            .fillMaxWidth()
+            .margin(bottom = 25.px)
+            .transition(CSSTransition("all", duration = 500.ms))
+    }
+    Breakpoint.MD {
+        Modifier
+            .fillMaxWidth(40.percent)
+    }
+}
+
+val ServiceH1Style by ComponentStyle {
+    base {
+        Modifier
+            .width(100.percent)
+            .textAlign(TextAlign.Center)
+            .fontWeight(FontWeight.SemiBold)
+            .zIndex(1)
+            .color(if (colorMode == ColorMode.LIGHT) primaryLight else primaryDark)
+            .transition(CSSTransition("all", duration = 500.ms))
+    }
+    Breakpoint.MD {
+        Modifier
+            .width(Width.FitContent)
+            .textAlign(TextAlign.Start)
+    }
+}
+
+val ServiceImageStyle by ComponentStyle {
+    base {
+        Modifier
+            .margin(top = (-30).px)
+            .width(100.percent)
+            .opacity(50.percent)
+            .height(auto)
+            .transition(CSSTransition("all", duration = 500.ms))
+    }
+    Breakpoint.MD {
+        Modifier
+            .borderRadius(bottomLeft = 50.percent)
+            .margin(top = (-30).px)
+            .maxWidth(50.percent)
+            .opacity(100.percent)
+            .height(auto)
+    }
+}
+
+val ServiceH3Style by ComponentStyle {
+    base {
+        Modifier
+            .color(if(colorMode == ColorMode.LIGHT) secondaryLight else secondaryDark)
+    }
+}
+
+val ServiceH5Style by ComponentStyle {
+    base {
+        Modifier
+            .color(if(colorMode == ColorMode.LIGHT)tertiaryLight else tertiaryDark)
+            .padding(bottom = 10.px)
+            .textAlign(TextAlign.Center)
+    }
+}
+
+
+
+val ServiceBPStyle by ComponentStyle {
+    base {
+        Modifier
+            .gridColumn(1,2)
+    }
+    Breakpoint.MD {
+        Modifier
+            .gridColumn(2,5)
+    }
+}
+
+val ServiceColumnStyle by ComponentStyle {
+    base {
+        Modifier
+            .width(100.percent)
+            .padding(10.px)
+            .margin(topBottom = 10.px)
+            .fillMaxHeight()
+            .boxShadow(3.px,3.px, blurRadius = 8.px, color = Colors.Black)
+            .borderRadius(r = 20.px)
+            .transition(CSSTransition("all", duration = 500.ms))
+    }
+    Breakpoint.MD {
+        Modifier
+            .width(90.percent)
+
     }
 }

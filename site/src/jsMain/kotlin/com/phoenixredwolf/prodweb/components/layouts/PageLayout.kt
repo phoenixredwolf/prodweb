@@ -68,7 +68,8 @@ fun PageLayout(
                 .align(Alignment.Center)
                 .fillMaxWidth()
                 .padding(0.px)
-                .gridRow(2, 5), breakpoint)
+                .gridRow(2, 5)
+        )
     }
 }
 

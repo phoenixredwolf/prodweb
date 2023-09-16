@@ -9,7 +9,6 @@ import com.phoenixredwolf.prodweb.components.widgets.PageTitle
 import com.phoenixredwolf.prodweb.theme.onPrimaryContainerLight
 import com.phoenixredwolf.prodweb.theme.onTertiaryContainerLight
 import com.phoenixredwolf.prodweb.utility.Constants
-import com.phoenixredwolf.prodweb.utility.Constants.CONTACT
 import com.phoenixredwolf.prodweb.utility.Res
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -209,13 +208,6 @@ private fun ContactOrSched() {
             text = "Contact Us "
         )
         Text(" or ")
-        Link(
-            modifier = ContactLinkStyle.toModifier(),
-            path = CONTACT,
-            text = "Schedule a call"
-        )
-        Br()
-        Text("To Get Started!")
     }
 
 }

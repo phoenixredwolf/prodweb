@@ -15,6 +15,8 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.silk.components.icons.fa.FaEllipsis
+import com.varabyte.kobweb.silk.components.icons.fa.IconSize
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.px
@@ -96,7 +98,12 @@ fun ConsultDropdown() {
                 ) {
                     Row(
                         modifier = Modifier.width(50.px)
-                    ) {}
+                    ) {
+                        FaEllipsis(
+                            modifier = Modifier.padding(right = 20.px),
+                            size = IconSize.LG
+                        )
+                    }
                     Link(
                         path = "/consult",
                         text = "Other Services",
