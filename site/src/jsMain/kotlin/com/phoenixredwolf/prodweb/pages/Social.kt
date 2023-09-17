@@ -30,10 +30,9 @@ import org.jetbrains.compose.web.dom.*
 
 @Page
 @Composable
-fun ITSupport() {
-    val title = "Expert IT Support Services | 24/7 Assistance | PhoenixRedwolf Digital Services"
-    val description =
-        "Experience reliable 24/7 IT support with PhoenixRedwolf Digital Services. Our experts are committed to providing your company with stress-free IT support solutions. Get the assistance you need anytime, anywhere."
+fun Social() {
+    val title = "Strategic Social Media Services | Boost Your Online Presence | PhoenixRedwolf Digital Services"
+    val description = "Elevate your brand on social media with PhoenixRedwolf Digital Services. Our strategic social media services enhance your online presence, engagement, and reach. Explore our social media solutions today!"
 
     PageLayout(title, description) {
         Column(
@@ -51,7 +50,7 @@ fun ITSupport() {
                     horizontalArrangement = Arrangement.End
                 ) {
                     Image(
-                        src = Res.Image.itsupportlg,
+                        src = Res.Image.socmedlg,
                         modifier = ServiceImageStyle.toModifier()
                     )
                 }
@@ -68,7 +67,7 @@ fun ITSupport() {
                         H1(
                             attrs = ServiceH1Style.toModifier()
                                 .toAttrs(),
-                            content = { Text("IT Support Services") }
+                            content = { Text("Social Media Services") }
                         )
                     }
                     Column(
@@ -81,14 +80,14 @@ fun ITSupport() {
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("IT Support when you need it. Whether the middle of the day or the middle of the night, our professionals stand ready to get you back up running.")
+                            Text("With our Social Media Services, you can harness the full potential of social media to connect with your audience, achieve your business goals, and stand out in the digital landscape.")
                         }
                         P(
                             attrs = ServicePHeadingStyle.toModifier()
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("We've got you covered 24/7 with the best professionals in the industry! We'll provide you with fast and stress free IT support services.")
+                            Text("Get more followers and target the right people at the right time. Build brand loyalty through social media engagements.")
                         }
                         Row(
                             modifier = ServiceCBRowStyle.toModifier(),
@@ -106,7 +105,7 @@ fun ITSupport() {
             ) {
                 H3(
                     attrs = ServiceH3Style.toModifier().toAttrs(),
-                    content = { Text("Service Overview") }
+                    content = { Text("Boost Your Brand with Our Social Media Services") }
                 )
                 P(
                     attrs = Modifier
@@ -115,7 +114,7 @@ fun ITSupport() {
                         .padding(bottom = 10.px)
                         .toAttrs(),
                     content = {
-                        Text("Managed IT Services empower your business with proactive IT solutions. Say goodbye to unexpected downtime and IT headaches. Our expert team at PhoenixRedwolf Digital Services is dedicated to keeping your systems running smoothly, ensuring you can focus on what matters most—growing your business.")
+                        Text("Welcome to PhoenixRedwolf Digital Services, where we leverage the power of social media to elevate your brand's online presence. Our Social Media Services are designed to help businesses connect with their audience, build engagement, and achieve meaningful results in the digital landscape.")
                     }
                 )
                 Benefits()
@@ -147,7 +146,7 @@ fun ITSupport() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("We're Here for You Around the Clock")
+                                    Text("Your Blueprint to Success")
                                 }
                             )
                             P(
@@ -156,7 +155,7 @@ fun ITSupport() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("We understand that IT issues can occur at any time. That's why our IT support services are available 24/7, ensuring you have access to assistance whenever you need it.")
+                                Text("We understand that every business is unique. Our social media strategies are customized to align with your specific goals, whether it's brand awareness, lead generation, or community building.")
                             }
 
                         }
@@ -172,7 +171,7 @@ fun ITSupport() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Quick Solutions, No Matter Where You Are")
+                                    Text("Captivating Your Audience")
                                 }
                             )
                             P(
@@ -181,7 +180,7 @@ fun ITSupport() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Our remote support capabilities allow us to diagnose and resolve issues efficiently, without the need for on-site visits. This means quicker solutions for you and less downtime for your business.")
+                                Text("We create compelling content that resonates with your target audience, encouraging engagement and sparking conversations.")
                             }
                         }
                     }
@@ -196,7 +195,7 @@ fun ITSupport() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("When In-Person Assistance is Needed")
+                                    Text("Mastering the Social Landscape")
                                 }
                             )
                             P(
@@ -205,7 +204,7 @@ fun ITSupport() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("For more complex issues that require on-site attention, our IT support team is ready to be at your location promptly to address any challenges your business faces.")
+                                Text("Our expertise spans various social media platforms, from Facebook and Twitter to Instagram and LinkedIn. We know where your audience is and how to reach them effectively.")
                             }
 
                         }
@@ -221,7 +220,7 @@ fun ITSupport() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Tailored to Your Unique Needs")
+                                    Text("Expand Your Reach")
                                 }
                             )
                             P(
@@ -230,7 +229,55 @@ fun ITSupport() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("We understand that every business is different. Our IT support solutions are customized to match your specific needs, ensuring a personalized experience and optimal IT performance.")
+                                Text("Unlock the potential of paid social media advertising. We design and execute campaigns that maximize your ROI and broaden your brand's reach.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Data-Driven Success")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We continuously monitor and analyze social media performance metrics to fine-tune strategies and ensure you achieve the best possible results.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Fostering Connections")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We actively engage with your online community, responding to comments, addressing concerns, and creating a positive online environment around your brand.")
                             }
 
                         }
@@ -246,7 +293,7 @@ fun ITSupport() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Your Data, Our Priority")
+                                    Text("Amplifying Your Voice")
                                 }
                             )
                             P(
@@ -255,7 +302,7 @@ fun ITSupport() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("We take the security and privacy of your data seriously. Our IT support interactions are conducted with the utmost care to protect your sensitive information.")
+                                Text("If relevant, we identify and collaborate with social media influencers who align with your brand values, amplifying your message and expanding your reach.")
                             }
                         }
                     }
@@ -270,7 +317,7 @@ fun ITSupport() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Available When You Need Us Most")
+                                    Text("Turning Followers into Customers")
                                 }
                             )
                             P(
@@ -279,9 +326,56 @@ fun ITSupport() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("IT emergencies don't wait for business hours. That's why we offer emergency IT support around the clock. You can count on us to be there when you need us most, ensuring your IT infrastructure remains resilient.")
+                                Text("Our strategies are designed to convert social media followers into leads and, ultimately, loyal customers.")
                             }
-
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Protecting Your Brand Image")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We ensure your brand maintains a positive image by managing online reviews, addressing negative feedback, and promoting positive interactions.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Targeted Advertising Campaigns")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We have expertise in managing paid social media advertising campaigns on various platforms, ensuring precise targeting and maximum impact for your budget.")
+                            }
                         }
                     }
                 }
@@ -319,7 +413,7 @@ private fun Benefits() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Why choose our IT Support Services? The benefits are clear:") }
+                        content = { Text("Why Choose Our Social Media Services? The Benefits Are Tremendous:") }
                     )
                 }
                 Ul(
@@ -330,36 +424,36 @@ private fun Benefits() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Swift Issue Resolution: ") }
+                            content = { Text("Increased Brand Visibility: ") }
                         )
-                        Text("Experience quick and effective issue resolution to minimize downtime.")
+                        Text("Enhance your brand's online visibility and reach a broader audience.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Reduced Downtime: ") }
+                            content = { Text("Engagement: ") }
                         )
-                        Text("Maximize productivity with minimal interruptions to your operations.")
+                        Text("Foster meaningful connections with your audience through compelling content.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Cost-Effective: ") }
+                            content = { Text("Lead Generation: ") }
                         )
-                        Text("Our solutions help you manage IT costs efficiently.")
+                        Text("Leverage social media as a powerful lead generation tool.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Enhanced Productivity: ") }
+                            content = { Text("Customer Loyalty: ") }
                         )
-                        Text("A well-supported IT infrastructure leads to improved workflow and productivity gains.")
+                        Text("Build and nurture customer relationships that lead to long-term loyalty.")
                     }
                 }
             }
@@ -396,9 +490,7 @@ private fun ServiceOfferings() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = {
-                            Text("Our IT Support Services: A Backbone for Your Business")
-                        }
+                        content = { Text("Our Social Media Portfolio Includes:") }
                     )
                 }
                 Ul(
@@ -411,40 +503,39 @@ private fun ServiceOfferings() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Helpdesk Support: ") }
+                            content = { Text("Social Media Strategy: ") }
                         )
-                        Text("Prompt assistance from our knowledgeable helpdesk team.")
+                        Text("Customized strategies tailored to your goals and target audience.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Hardware & Software Troubleshooting: ") }
+                            content = { Text("Content Creation: ") }
                         )
-                        Text("Swift resolution of hardware and software-related issues.")
+                        Text("Engaging and relevant content across text, images, videos, and infographics.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Network Assistance: ") }
+                            content = { Text("Platform Management: ") }
                         )
-                        Text("Ensuring your network runs smoothly and securely")
+                        Text("Expert management of various social media platforms")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Remote Support: ") }
+                            content = { Text("Paid Advertising: ") }
                         )
-                        Text("Quick solutions through remote assistance.")
+                        Text("Effective paid advertising campaigns to expand your reach.")
                     }
                 }
             }
         }
     }
-
 }

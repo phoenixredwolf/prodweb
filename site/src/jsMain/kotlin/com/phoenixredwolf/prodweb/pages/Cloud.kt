@@ -30,11 +30,11 @@ import org.jetbrains.compose.web.dom.*
 
 @Page
 @Composable
-fun Managed() {
-    val title = "Managed IT Services | Proactive IT Solutions | PhoenixRedwolf Digital Services"
-    val description = "Boost your business's efficiency and security with our Managed IT Services. PhoenixRedwolf Digital Services provides proactive IT solutions tailored to your needs. Explore our managed services today!"
+fun Cloud() {
+    val title = "Comprehensive Cloud Services | Scalable Cloud Solutions | PhoenixRedwolf Digital Services"
+    val description = "Unlock the potential of the cloud with PhoenixRedwolf Digital Services. Our comprehensive cloud solutions provide scalability, security, and efficiency for your business. Elevate your operations to the cloud today!"
 
-    PageLayout(title,description) {
+    PageLayout(title, description) {
         Column(
             modifier = Modifier
                 .margin(top = 150.px)
@@ -49,10 +49,10 @@ fun Managed() {
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.End
                 ) {
-                        Image(
-                            src = Res.Image.managedserviceslg,
-                            modifier = ServiceImageStyle.toModifier()
-                        )
+                    Image(
+                        src = Res.Image.cloudservlg,
+                        modifier = ServiceImageStyle.toModifier()
+                    )
                 }
                 Column(
                     modifier = Modifier.fillMaxWidth(),
@@ -67,7 +67,7 @@ fun Managed() {
                         H1(
                             attrs = ServiceH1Style.toModifier()
                                 .toAttrs(),
-                            content = { Text("Managed IT Services") }
+                            content = { Text("Cloud Services") }
                         )
                     }
                     Column(
@@ -80,14 +80,14 @@ fun Managed() {
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("Have dedicated IT experts backing your operations. Our managed IT services are staffed by experts in the field who stand ready to assist you.")
+                            Text("Whether migrating to a public cloud, setting up a private cloud, or creating a hybrid environment, our experts will make the transition seamless.")
                         }
                         P(
                             attrs = ServicePHeadingStyle.toModifier()
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("Whether you need assistance with a specific project or a partner to handle all of your IT needs, we're ready to help")
+                            Text("We'll identify opportunities and off the best options for improving your business processes. Let us manage your cloud while you manage your business.")
                         }
                         Row(
                             modifier = ServiceCBRowStyle.toModifier(),
@@ -105,7 +105,7 @@ fun Managed() {
             ) {
                 H3(
                     attrs = ServiceH3Style.toModifier().toAttrs(),
-                    content = { Text("Service Overview") }
+                    content = { Text("Empower Your Business with Cloud Services") }
                 )
                 P(
                     attrs = Modifier
@@ -114,7 +114,7 @@ fun Managed() {
                         .padding(bottom = 10.px)
                         .toAttrs(),
                     content = {
-                        Text("Managed IT Services empower your business with proactive IT solutions. Say goodbye to unexpected downtime and IT headaches. Our expert team at PhoenixRedwolf Digital Services is dedicated to keeping your systems running smoothly, ensuring you can focus on what matters most—growing your business.")
+                        Text("Welcome to PhoenixRedwolf Digital Services, where cloud computing meets innovation. Our Cloud Services represent the future of flexible and efficient business operations. Explore how the cloud can transform your organization.")
                     }
                 )
                 Benefits()
@@ -133,7 +133,7 @@ fun Managed() {
                 )
                 SimpleGrid(
                     modifier = Modifier.fillMaxWidth().margin(top = 25.px).alignContent(AlignContent.Center),
-                    numColumns = numColumns(base = 1, md = 3)
+                    numColumns = numColumns(base = 1, md=2, lg =3)
                 ) {
                     Column(
                         modifier = Modifier.fillMaxWidth(),
@@ -146,7 +146,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Customization")
+                                    Text("Grow with Confidence")
                                 }
                             )
                             P(
@@ -155,7 +155,7 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("We understand that every business is unique. Our Managed IT Services are tailored to match your specific needs. Whether you're a small startup or a large enterprise, we'll create a solution that fits you perfectly.")
+                                Text("PhoenixRedwolf's cloud solutions are designed to scale alongside your business. Whether you're expanding rapidly or need to adjust resources, our cloud services provide the flexibility to accommodate your growth.")
                             }
 
                         }
@@ -171,7 +171,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Proactive Support")
+                                    Text("Protecting Your Digital Assets")
                                 }
                             )
                             P(
@@ -180,7 +180,7 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Our approach is all about staying ahead of the curve. We don't wait for issues to arise—we actively monitor, identify, and resolve potential problems before they disrupt your business operations.")
+                                Text("Data security is paramount. Our cloud services include robust security measures like data encryption and firewalls, ensuring your critical information remains safe and compliant with industry standards.")
                             }
                         }
                     }
@@ -195,7 +195,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Scalability")
+                                    Text("Cost-Effective IT Solutions")
                                 }
                             )
                             P(
@@ -204,13 +204,162 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Your business is dynamic, and your IT needs may change. Rest assured, our Managed IT Services are designed to scale with you. Whether you're expanding or streamlining, we'll adapt our solutions to match your evolving requirements.")
+                                Text("Say goodbye to costly on-premises infrastructure. Our cloud services are a cost-efficient alternative, allowing you to pay only for the resources you use.")
+                            }
+
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Peace of Mind for Your Data")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We provide automated data backup and disaster recovery solutions to guarantee that your data is always protected and recoverable in case of unexpected events.")
+                            }
+
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Seamless Transition to the Cloud")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Trust our experienced team to handle the migration of your data and applications to the cloud with minimal disruption to your operations.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Tailored to Your Needs")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Every business is unique. Our cloud solutions are fully customizable to match your specific requirements, ensuring you get the most out of the cloud.")
+                            }
+
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Meeting Regulatory Standards")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Our cloud services comply with industry regulations and data privacy standards, providing assurance that your data is handled securely.")
+                            }
+
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("The Experts Behind the Cloud")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Our team boasts a wealth of technical expertise and certifications in cloud technologies, ensuring you receive top-tier service.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Support You Can Rely On")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We're not just a cloud provider; we're your partner. Our dedicated customer support is available to assist you whenever you need it, ensuring your cloud experience is seamless.")
                             }
 
                         }
                     }
                 }
             }
+
         }
     }
 }
@@ -244,7 +393,7 @@ private fun Benefits() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Why choose Managed IT Services from PhoenixRedwolf? The benefits are clear:") }
+                        content = { Text("Why Choose Our Cloud Services? The Benefits Are Enormous:") }
                     )
                 }
                 Ul(
@@ -255,18 +404,9 @@ private fun Benefits() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Enhanced Security: ") }
+                            content = { Text("Scalability: ") }
                         )
-                        Text("Protect your data and systems from cyber threats with our robust cybersecurity measures.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Reduced Downtime: ") }
-                        )
-                        Text("We keep your IT infrastructure running efficiently, minimizing downtime and maximizing productivity.")
+                        Text("Seamlessly scale your resources up or down based on your needs.")
                     }
                     Li {
                         Span(
@@ -275,16 +415,25 @@ private fun Benefits() {
                                 .toAttrs(),
                             content = { Text("Cost Savings: ") }
                         )
-                        Text("Our tailored solutions optimize your IT budget, reducing unexpected expenses.")
+                        Text("Eliminate the high costs of on-premises infrastructure and maintenance.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Proactive Support: ") }
+                            content = { Text("Data Security: ") }
                         )
-                        Text("Our team works tirelessly behind the scenes to prevent IT issues before they disrupt your operations.")
+                        Text("Your data is protected with advanced encryption and robust firewall measures.")
+                    }
+                    Li {
+                        Span(
+                            attrs = Modifier
+                                .fontWeight(FontWeight.SemiBold)
+                                .toAttrs(),
+                            content = { Text("Anywhere Access: ") }
+                        )
+                        Text("Access your data and applications from anywhere, at any time.")
                     }
                 }
             }
@@ -321,7 +470,7 @@ private fun ServiceOfferings() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Our Managed IT Services encompass a comprehensive range of offerings, including:") }
+                        content = { Text("Our Cloud Services Portfolio:") }
                     )
                 }
                 Ul(
@@ -334,54 +483,45 @@ private fun ServiceOfferings() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Network Monitoring: ") }
+                            content = { Text("Public Cloud: ") }
                         )
-                        Text("Continuous monitoring to identify and address issues before they impact your business.")
+                        Text("Leverage the power of public cloud platforms for flexibility and accessibility.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Software Updates: ") }
+                            content = { Text("Private Cloud: ") }
                         )
-                        Text("Keeping your software up-to-date to enhance performance and security.")
+                        Text("Enjoy the security and control of a private cloud environment.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Cybersecurity: ") }
+                            content = { Text("Hybrid Cloud: ") }
                         )
-                        Text("Protecting your data and systems with cutting-edge security measures.")
+                        Text("Combine the benefits of public and private clouds for a tailored solution.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Data Backup: ") }
+                            content = { Text("Cloud Migration: ") }
                         )
-                        Text("Ensuring your critical data is securely backed up and recoverable.")
+                        Text("Seamlessly transition your data and applications to the cloud.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("IT Maintenance: ") }
+                            content = { Text("Cloud Management: ") }
                         )
-                        Text("Proactive maintenance to keep your systems in peak condition.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("24/7 Support: ") }
-                        )
-                        Text("Round-the-clock assistance for all your IT needs.")
+                        Text("Our experts ensure your cloud environment runs optimally.")
                     }
                 }
             }

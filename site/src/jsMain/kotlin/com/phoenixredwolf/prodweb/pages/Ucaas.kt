@@ -30,11 +30,11 @@ import org.jetbrains.compose.web.dom.*
 
 @Page
 @Composable
-fun Managed() {
-    val title = "Managed IT Services | Proactive IT Solutions | PhoenixRedwolf Digital Services"
-    val description = "Boost your business's efficiency and security with our Managed IT Services. PhoenixRedwolf Digital Services provides proactive IT solutions tailored to your needs. Explore our managed services today!"
+fun Ucaas() {
+    val title = "Transform Communication with UCaaS | Unified Communications Services | PhoenixRedwolf Digital Services"
+    val description = "Experience seamless communication and collaboration with UCaaS solutions by PhoenixRedwolf Digital Services. Our Unified Communications Services empower your team for success. Explore UCaaS today!"
 
-    PageLayout(title,description) {
+    PageLayout(title, description) {
         Column(
             modifier = Modifier
                 .margin(top = 150.px)
@@ -49,10 +49,10 @@ fun Managed() {
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.End
                 ) {
-                        Image(
-                            src = Res.Image.managedserviceslg,
-                            modifier = ServiceImageStyle.toModifier()
-                        )
+                    Image(
+                        src = Res.Image.ucaaslg,
+                        modifier = ServiceImageStyle.toModifier()
+                    )
                 }
                 Column(
                     modifier = Modifier.fillMaxWidth(),
@@ -67,7 +67,7 @@ fun Managed() {
                         H1(
                             attrs = ServiceH1Style.toModifier()
                                 .toAttrs(),
-                            content = { Text("Managed IT Services") }
+                            content = { Text("Unified Communications (UCaaS)") }
                         )
                     }
                     Column(
@@ -80,14 +80,14 @@ fun Managed() {
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("Have dedicated IT experts backing your operations. Our managed IT services are staffed by experts in the field who stand ready to assist you.")
+                            Text("Our UCaaS empowers businesses with unified communication solutions, combining voice, video, messaging, and collaboration tools. Elevate efficiency, boost teamwork, and enhance customer service with seamless, scalable communication.")
                         }
                         P(
                             attrs = ServicePHeadingStyle.toModifier()
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("Whether you need assistance with a specific project or a partner to handle all of your IT needs, we're ready to help")
+                            Text("With our UCaaS solutions, you can experience the power of unified communication, enhancing collaboration, efficiency, and customer service for your business.")
                         }
                         Row(
                             modifier = ServiceCBRowStyle.toModifier(),
@@ -105,7 +105,7 @@ fun Managed() {
             ) {
                 H3(
                     attrs = ServiceH3Style.toModifier().toAttrs(),
-                    content = { Text("Service Overview") }
+                    content = { Text("Elevate Communication with Unified Communications as a Service") }
                 )
                 P(
                     attrs = Modifier
@@ -114,7 +114,7 @@ fun Managed() {
                         .padding(bottom = 10.px)
                         .toAttrs(),
                     content = {
-                        Text("Managed IT Services empower your business with proactive IT solutions. Say goodbye to unexpected downtime and IT headaches. Our expert team at PhoenixRedwolf Digital Services is dedicated to keeping your systems running smoothly, ensuring you can focus on what matters most—growing your business.")
+                        Text("Welcome to PhoenixRedwolf Digital Services, where we revolutionize business communication with our Unified Communications as a Service (UCaaS) solutions. In today's dynamic work environment, seamless communication and collaboration are vital for success. Discover how our UCaaS offerings empower your team to work smarter, not harder.")
                     }
                 )
                 Benefits()
@@ -133,7 +133,7 @@ fun Managed() {
                 )
                 SimpleGrid(
                     modifier = Modifier.fillMaxWidth().margin(top = 25.px).alignContent(AlignContent.Center),
-                    numColumns = numColumns(base = 1, md = 3)
+                    numColumns = numColumns(base = 1, md=2, lg =3)
                 ) {
                     Column(
                         modifier = Modifier.fillMaxWidth(),
@@ -146,7 +146,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Customization")
+                                    Text("Empowering Your Communication:")
                                 }
                             )
                             P(
@@ -155,7 +155,7 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("We understand that every business is unique. Our Managed IT Services are tailored to match your specific needs. Whether you're a small startup or a large enterprise, we'll create a solution that fits you perfectly.")
+                                Text("Our UCaaS solutions offer a range of communication features, including voice calls, high-definition video conferencing, instant messaging, and file sharing. Stay connected with your team, clients, and partners effortlessly.")
                             }
 
                         }
@@ -171,7 +171,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Proactive Support")
+                                    Text("Unlocking Team Productivity")
                                 }
                             )
                             P(
@@ -180,7 +180,7 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Our approach is all about staying ahead of the curve. We don't wait for issues to arise—we actively monitor, identify, and resolve potential problems before they disrupt your business operations.")
+                                Text("Collaborate effectively with tools like document sharing, screen sharing, virtual whiteboards, and project management capabilities. Transform ideas into action.")
                             }
                         }
                     }
@@ -195,7 +195,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Scalability")
+                                    Text("Work Anywhere, Anytime")
                                 }
                             )
                             P(
@@ -204,9 +204,106 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Your business is dynamic, and your IT needs may change. Rest assured, our Managed IT Services are designed to scale with you. Whether you're expanding or streamlining, we'll adapt our solutions to match your evolving requirements.")
+                                Text("Our UCaaS solutions support remote work, mobile devices, and BYOD policies, allowing your team to work from anywhere while staying connected and productive.")
                             }
 
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Seamless Workflow Integration")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Our UCaaS systems seamlessly integrate with your existing business applications, such as CRM systems and email platforms, to optimize processes and boost productivity.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Protecting Your Communications")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We prioritize security, implementing robust measures to safeguard your sensitive communications and ensure compliance with industry regulations.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Adapt and Thrive")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Our UCaaS solutions are designed to scale with your business. Whether you're expanding or downsizing, we adapt to your communication needs.")
+                            }
+
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Your Success, Our Priority")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We provide comprehensive customer support and training to ensure you maximize the benefits of our UCaaS services. Our team is here to assist you at every step of the way.")
+                            }
                         }
                     }
                 }
@@ -244,7 +341,7 @@ private fun Benefits() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Why choose Managed IT Services from PhoenixRedwolf? The benefits are clear:") }
+                        content = { Text("Why Choose Our UCaaS Solutions? The Benefits Are Exceptional:") }
                     )
                 }
                 Ul(
@@ -255,18 +352,18 @@ private fun Benefits() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Enhanced Security: ") }
+                            content = { Text("Improved Collaboration: ") }
                         )
-                        Text("Protect your data and systems from cyber threats with our robust cybersecurity measures.")
+                        Text("Enhance teamwork and project management with integrated communication tools.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Reduced Downtime: ") }
+                            content = { Text("Increased Efficiency: ") }
                         )
-                        Text("We keep your IT infrastructure running efficiently, minimizing downtime and maximizing productivity.")
+                        Text("Streamline communication processes for faster decision-making.")
                     }
                     Li {
                         Span(
@@ -275,16 +372,25 @@ private fun Benefits() {
                                 .toAttrs(),
                             content = { Text("Cost Savings: ") }
                         )
-                        Text("Our tailored solutions optimize your IT budget, reducing unexpected expenses.")
+                        Text("Reduce expenses associated with traditional communication methods.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Proactive Support: ") }
+                            content = { Text("Scalability: ") }
                         )
-                        Text("Our team works tirelessly behind the scenes to prevent IT issues before they disrupt your operations.")
+                        Text("Our UCaaS solutions grow with your business, adapting to your changing needs.")
+                    }
+                    Li {
+                        Span(
+                            attrs = Modifier
+                                .fontWeight(FontWeight.SemiBold)
+                                .toAttrs(),
+                            content = { Text("Enhanced Customer Service: ") }
+                        )
+                        Text("Deliver exceptional customer experiences with efficient communication channels.")
                     }
                 }
             }
@@ -321,7 +427,7 @@ private fun ServiceOfferings() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Our Managed IT Services encompass a comprehensive range of offerings, including:") }
+                        content = { Text("Our UCaaS Services Include:") }
                     )
                 }
                 Ul(
@@ -334,58 +440,39 @@ private fun ServiceOfferings() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Network Monitoring: ") }
+                            content = { Text("Voice and Video Conferencing: ") }
                         )
-                        Text("Continuous monitoring to identify and address issues before they impact your business.")
+                        Text("Connect face-to-face or through voice calls, fostering meaningful interactions.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Software Updates: ") }
+                            content = { Text("Messaging: ") }
                         )
-                        Text("Keeping your software up-to-date to enhance performance and security.")
+                        Text("Enable instant messaging for quick communication within your team.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Cybersecurity: ") }
+                            content = { Text("Presence Management: ") }
                         )
-                        Text("Protecting your data and systems with cutting-edge security measures.")
+                        Text("Know the availability of team members in real-time, facilitating efficient communication.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Data Backup: ") }
+                            content = { Text("Integration: ") }
                         )
-                        Text("Ensuring your critical data is securely backed up and recoverable.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("IT Maintenance: ") }
-                        )
-                        Text("Proactive maintenance to keep your systems in peak condition.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("24/7 Support: ") }
-                        )
-                        Text("Round-the-clock assistance for all your IT needs.")
+                        Text("Seamlessly integrate UCaaS with other business applications to streamline workflows.")
                     }
                 }
             }
         }
     }
-
 }

@@ -262,7 +262,7 @@ enum class Services: BaseService {
         override val id: String
             get() = "train"
         override val path: String
-            get() = "/train"
+            get() = "/contact"
         override val title: String
             get() = "Training"
         override val desc: String
@@ -288,7 +288,7 @@ enum class Services: BaseService {
         override val id: String
             get() = "staff"
         override val path: String
-            get() = "/staffing"
+            get() = "/contact"
         override val title: String
             get() = "Technical Staffing"
         override val desc: String

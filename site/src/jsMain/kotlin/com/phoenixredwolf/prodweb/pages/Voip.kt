@@ -30,11 +30,11 @@ import org.jetbrains.compose.web.dom.*
 
 @Page
 @Composable
-fun Managed() {
-    val title = "Managed IT Services | Proactive IT Solutions | PhoenixRedwolf Digital Services"
-    val description = "Boost your business's efficiency and security with our Managed IT Services. PhoenixRedwolf Digital Services provides proactive IT solutions tailored to your needs. Explore our managed services today!"
+fun Voip() {
+    val title = "Enhance Communication with VoIP Services | PhoenixRedwolf Digital Services"
+    val description = "Experience superior voice communication with our VoIP services at PhoenixRedwolf Digital Services. Elevate call quality, reduce costs, and streamline business communication. Explore VoIP solutions today!"
 
-    PageLayout(title,description) {
+    PageLayout(title, description) {
         Column(
             modifier = Modifier
                 .margin(top = 150.px)
@@ -49,10 +49,10 @@ fun Managed() {
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.End
                 ) {
-                        Image(
-                            src = Res.Image.managedserviceslg,
-                            modifier = ServiceImageStyle.toModifier()
-                        )
+                    Image(
+                        src = Res.Image.ucaaslg,
+                        modifier = ServiceImageStyle.toModifier()
+                    )
                 }
                 Column(
                     modifier = Modifier.fillMaxWidth(),
@@ -67,7 +67,7 @@ fun Managed() {
                         H1(
                             attrs = ServiceH1Style.toModifier()
                                 .toAttrs(),
-                            content = { Text("Managed IT Services") }
+                            content = { Text("Voice over IP Systems") }
                         )
                     }
                     Column(
@@ -80,14 +80,14 @@ fun Managed() {
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("Have dedicated IT experts backing your operations. Our managed IT services are staffed by experts in the field who stand ready to assist you.")
+                            Text("Experience superior communication with PhoenixRedwolf's VoIP services. Elevate call quality, reduce costs, and adapt to modern work dynamics with our scalable, feature-rich solutions.")
                         }
                         P(
                             attrs = ServicePHeadingStyle.toModifier()
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("Whether you need assistance with a specific project or a partner to handle all of your IT needs, we're ready to help")
+                            Text("With PhoenixRedwolf's phone system services, you're not just adopting a phone system; you're embracing a modern communication solution that enhances efficiency, flexibility, and cost-effectiveness for your business.")
                         }
                         Row(
                             modifier = ServiceCBRowStyle.toModifier(),
@@ -105,7 +105,7 @@ fun Managed() {
             ) {
                 H3(
                     attrs = ServiceH3Style.toModifier().toAttrs(),
-                    content = { Text("Service Overview") }
+                    content = { Text("Revolutionize Communication with VoIP Services") }
                 )
                 P(
                     attrs = Modifier
@@ -114,7 +114,7 @@ fun Managed() {
                         .padding(bottom = 10.px)
                         .toAttrs(),
                     content = {
-                        Text("Managed IT Services empower your business with proactive IT solutions. Say goodbye to unexpected downtime and IT headaches. Our expert team at PhoenixRedwolf Digital Services is dedicated to keeping your systems running smoothly, ensuring you can focus on what matters most—growing your business.")
+                        Text("Welcome to PhoenixRedwolf Digital Services, where we redefine communication with our VoIP Services. Voice over Internet Protocol (VoIP) is the future of voice communication, offering businesses cost-effective, high-quality phone services over the internet. Discover how VoIP can transform your communication infrastructure.")
                     }
                 )
                 Benefits()
@@ -133,7 +133,7 @@ fun Managed() {
                 )
                 SimpleGrid(
                     modifier = Modifier.fillMaxWidth().margin(top = 25.px).alignContent(AlignContent.Center),
-                    numColumns = numColumns(base = 1, md = 3)
+                    numColumns = numColumns(base = 1, md=2, lg =3)
                 ) {
                     Column(
                         modifier = Modifier.fillMaxWidth(),
@@ -146,7 +146,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Customization")
+                                    Text("Enhancing Communication:")
                                 }
                             )
                             P(
@@ -155,7 +155,7 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("We understand that every business is unique. Our Managed IT Services are tailored to match your specific needs. Whether you're a small startup or a large enterprise, we'll create a solution that fits you perfectly.")
+                                Text("Elevate your communication with advanced features such as call forwarding, voicemail-to-email, call conferencing, and interactive voice response (IVR) systems.")
                             }
 
                         }
@@ -171,7 +171,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Proactive Support")
+                                    Text("Seamless Business Integration")
                                 }
                             )
                             P(
@@ -180,7 +180,7 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Our approach is all about staying ahead of the curve. We don't wait for issues to arise—we actively monitor, identify, and resolve potential problems before they disrupt your business operations.")
+                                Text("VoIP isn't just about calls; it's about enhancing your entire workflow. Our VoIP systems seamlessly integrate with your other business applications, including Customer Relationship Management (CRM) tools, email platforms, and more.")
                             }
                         }
                     }
@@ -195,7 +195,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Scalability")
+                                    Text("Stay Connected on the Go")
                                 }
                             )
                             P(
@@ -204,9 +204,57 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Your business is dynamic, and your IT needs may change. Rest assured, our Managed IT Services are designed to scale with you. Whether you're expanding or streamlining, we'll adapt our solutions to match your evolving requirements.")
+                                Text("Embrace the freedom of mobility. Our VoIP solutions allow your team to stay connected and productive, whether they're in the office or on the move.")
                             }
 
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Protecting Your Communication")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Security is paramount. Rest assured, our VoIP services employ robust encryption and authentication measures to safeguard your sensitive conversations.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Your Success Is Our Priority")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We're not just here to provide VoIP services; we're here to ensure you get the most out of them. Our dedicated support team is ready to assist you, and we offer comprehensive training to help your team effectively utilize your VoIP systems.")
+                            }
                         }
                     }
                 }
@@ -244,7 +292,7 @@ private fun Benefits() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Why choose Managed IT Services from PhoenixRedwolf? The benefits are clear:") }
+                        content = { Text("Why Choose Our VoIP Services? The Advantages Are Unmistakable:") }
                     )
                 }
                 Ul(
@@ -255,18 +303,9 @@ private fun Benefits() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Enhanced Security: ") }
+                            content = { Text("Superior Call Quality: ") }
                         )
-                        Text("Protect your data and systems from cyber threats with our robust cybersecurity measures.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Reduced Downtime: ") }
-                        )
-                        Text("We keep your IT infrastructure running efficiently, minimizing downtime and maximizing productivity.")
+                        Text("Experience crystal-clear voice calls with exceptional audio quality.")
                     }
                     Li {
                         Span(
@@ -275,16 +314,25 @@ private fun Benefits() {
                                 .toAttrs(),
                             content = { Text("Cost Savings: ") }
                         )
-                        Text("Our tailored solutions optimize your IT budget, reducing unexpected expenses.")
+                        Text("Reduce your phone bills significantly compared to traditional landlines.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Proactive Support: ") }
+                            content = { Text("Scalability: ") }
                         )
-                        Text("Our team works tirelessly behind the scenes to prevent IT issues before they disrupt your operations.")
+                        Text("Grow your communication system seamlessly as your business expands.")
+                    }
+                    Li {
+                        Span(
+                            attrs = Modifier
+                                .fontWeight(FontWeight.SemiBold)
+                                .toAttrs(),
+                            content = { Text("Remote Work: ") }
+                        )
+                        Text("Enable your team to stay connected from anywhere, supporting modern work arrangements.")
                     }
                 }
             }
@@ -321,7 +369,7 @@ private fun ServiceOfferings() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Our Managed IT Services encompass a comprehensive range of offerings, including:") }
+                        content = { Text("Our VoIP Services Encompass:") }
                     )
                 }
                 Ul(
@@ -334,58 +382,30 @@ private fun ServiceOfferings() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Network Monitoring: ") }
+                            content = { Text("Hosted VoIP: ") }
                         )
-                        Text("Continuous monitoring to identify and address issues before they impact your business.")
+                        Text("Harness the power of cloud-based phone systems with our hosted VoIP solutions.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Software Updates: ") }
+                            content = { Text("VoIP Phones: ") }
                         )
-                        Text("Keeping your software up-to-date to enhance performance and security.")
+                        Text("Choose from our range of VoIP phones, including desk phones and software-based softphones.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Cybersecurity: ") }
+                            content = { Text("Call Management: ") }
                         )
-                        Text("Protecting your data and systems with cutting-edge security measures.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Data Backup: ") }
-                        )
-                        Text("Ensuring your critical data is securely backed up and recoverable.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("IT Maintenance: ") }
-                        )
-                        Text("Proactive maintenance to keep your systems in peak condition.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("24/7 Support: ") }
-                        )
-                        Text("Round-the-clock assistance for all your IT needs.")
+                        Text("Take control of your communication with features like call routing, auto-attendants, and call recording.")
                     }
                 }
             }
         }
     }
-
 }

@@ -30,11 +30,11 @@ import org.jetbrains.compose.web.dom.*
 
 @Page
 @Composable
-fun Managed() {
-    val title = "Managed IT Services | Proactive IT Solutions | PhoenixRedwolf Digital Services"
-    val description = "Boost your business's efficiency and security with our Managed IT Services. PhoenixRedwolf Digital Services provides proactive IT solutions tailored to your needs. Explore our managed services today!"
+fun Network() {
+    val title = "Wired & Wireless Network Services | Reliable Network Solutions | PhoenixRedwolf Digital Services"
+    val description = "Transform your connectivity with PhoenixRedwolf Digital Services. Explore our wired and wireless network solutions for reliable and efficient business operations. Elevate your network infrastructure today!"
 
-    PageLayout(title,description) {
+    PageLayout(title, description) {
         Column(
             modifier = Modifier
                 .margin(top = 150.px)
@@ -49,10 +49,10 @@ fun Managed() {
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.End
                 ) {
-                        Image(
-                            src = Res.Image.managedserviceslg,
-                            modifier = ServiceImageStyle.toModifier()
-                        )
+                    Image(
+                        src = Res.Image.networklg,
+                        modifier = ServiceImageStyle.toModifier()
+                    )
                 }
                 Column(
                     modifier = Modifier.fillMaxWidth(),
@@ -67,7 +67,7 @@ fun Managed() {
                         H1(
                             attrs = ServiceH1Style.toModifier()
                                 .toAttrs(),
-                            content = { Text("Managed IT Services") }
+                            content = { Text("Wired & Wireless Network Services") }
                         )
                     }
                     Column(
@@ -80,14 +80,14 @@ fun Managed() {
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("Have dedicated IT experts backing your operations. Our managed IT services are staffed by experts in the field who stand ready to assist you.")
+                            Text("Does your company need there wireless network optimized? Maybe it's time to update your routers and firewalls.")
                         }
                         P(
                             attrs = ServicePHeadingStyle.toModifier()
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("Whether you need assistance with a specific project or a partner to handle all of your IT needs, we're ready to help")
+                            Text("Whether going completely wireless, upgrading your wired services, or just needing your server closets organized, our specialists will take care of every aspect of your networks.")
                         }
                         Row(
                             modifier = ServiceCBRowStyle.toModifier(),
@@ -105,7 +105,7 @@ fun Managed() {
             ) {
                 H3(
                     attrs = ServiceH3Style.toModifier().toAttrs(),
-                    content = { Text("Service Overview") }
+                    content = { Text("Empower Your Business with Reliable Network Services") }
                 )
                 P(
                     attrs = Modifier
@@ -114,7 +114,7 @@ fun Managed() {
                         .padding(bottom = 10.px)
                         .toAttrs(),
                     content = {
-                        Text("Managed IT Services empower your business with proactive IT solutions. Say goodbye to unexpected downtime and IT headaches. Our expert team at PhoenixRedwolf Digital Services is dedicated to keeping your systems running smoothly, ensuring you can focus on what matters most—growing your business.")
+                        Text("Welcome to PhoenixRedwolf Digital Services, where seamless connectivity is our specialty. Our Wired & Wireless Network Services are designed to keep your business running smoothly, whether you're in the office, at home, or on the go. Discover the power of robust and secure network solutions.")
                     }
                 )
                 Benefits()
@@ -133,7 +133,7 @@ fun Managed() {
                 )
                 SimpleGrid(
                     modifier = Modifier.fillMaxWidth().margin(top = 25.px).alignContent(AlignContent.Center),
-                    numColumns = numColumns(base = 1, md = 3)
+                    numColumns = numColumns(base = 1, md=2, lg =3)
                 ) {
                     Column(
                         modifier = Modifier.fillMaxWidth(),
@@ -146,7 +146,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Customization")
+                                    Text("The Backbone of Reliable Connectivity")
                                 }
                             )
                             P(
@@ -155,7 +155,7 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("We understand that every business is unique. Our Managed IT Services are tailored to match your specific needs. Whether you're a small startup or a large enterprise, we'll create a solution that fits you perfectly.")
+                                Text("We specialize in designing and implementing wired network solutions that provide unparalleled reliability and stability. Whether you're in the office or at a remote location, count on our wired networks to keep you connected.")
                             }
 
                         }
@@ -171,7 +171,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Proactive Support")
+                                    Text("Seamless Wi-Fi Solutions")
                                 }
                             )
                             P(
@@ -180,7 +180,7 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Our approach is all about staying ahead of the curve. We don't wait for issues to arise—we actively monitor, identify, and resolve potential problems before they disrupt your business operations.")
+                                Text("Experience efficient wireless connectivity with our Wi-Fi solutions. From access point installation to network optimization, we ensure your wireless network performs flawlessly.")
                             }
                         }
                     }
@@ -195,7 +195,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Scalability")
+                                    Text("Grow Your Connectivity with Confidence")
                                 }
                             )
                             P(
@@ -204,9 +204,130 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Your business is dynamic, and your IT needs may change. Rest assured, our Managed IT Services are designed to scale with you. Whether you're expanding or streamlining, we'll adapt our solutions to match your evolving requirements.")
+                                Text("Our network solutions are designed to scale with your business. As you expand, we'll adjust your network infrastructure to meet your evolving connectivity needs.")
                             }
 
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Protecting Your Network and Data")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We take network security seriously. Our comprehensive measures, including firewall protection, intrusion detection, and encryption, ensure your data remains secure.")
+                            }
+
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Real-Time Oversight")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Our network monitoring services provide real-time insights into your network's performance. We proactively identify and resolve issues, minimizing downtime.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Tailored Network Solutions")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Every business is unique. Our network solutions are customized to match your specific requirements, providing a personalized network infrastructure that suits your needs.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Reliable Assistance Anytime, Anywhere")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We're here to support you around the clock. Whether you have questions, need assistance, or face network issues, our 24/7 support team is just a call away.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Your Connectivity Partner")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Our customer support team is dedicated to ensuring your network experience is seamless. We're not just a service provider; we're your trusted partner in connectivity.")
+                            }
                         }
                     }
                 }
@@ -244,7 +365,7 @@ private fun Benefits() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Why choose Managed IT Services from PhoenixRedwolf? The benefits are clear:") }
+                        content = { Text("Why Choose Our Network Services? The Benefits Are Clear:") }
                     )
                 }
                 Ul(
@@ -255,36 +376,36 @@ private fun Benefits() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
+                            content = { Text("Improved Reliability: ") }
+                        )
+                        Text("Say goodbye to network downtime and interruptions.")
+                    }
+                    Li {
+                        Span(
+                            attrs = Modifier
+                                .fontWeight(FontWeight.SemiBold)
+                                .toAttrs(),
+                            content = { Text("Scalability: ") }
+                        )
+                        Text("Grow your network resources as your business expands.")
+                    }
+                    Li {
+                        Span(
+                            attrs = Modifier
+                                .fontWeight(FontWeight.SemiBold)
+                                .toAttrs(),
                             content = { Text("Enhanced Security: ") }
                         )
-                        Text("Protect your data and systems from cyber threats with our robust cybersecurity measures.")
+                        Text("Protect your data with advanced firewall and encryption measures.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Reduced Downtime: ") }
+                            content = { Text("Productivity Boost: ") }
                         )
-                        Text("We keep your IT infrastructure running efficiently, minimizing downtime and maximizing productivity.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Cost Savings: ") }
-                        )
-                        Text("Our tailored solutions optimize your IT budget, reducing unexpected expenses.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Proactive Support: ") }
-                        )
-                        Text("Our team works tirelessly behind the scenes to prevent IT issues before they disrupt your operations.")
+                        Text("Enjoy efficient operations with a reliable network infrastructure.")
                     }
                 }
             }
@@ -321,7 +442,9 @@ private fun ServiceOfferings() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Our Managed IT Services encompass a comprehensive range of offerings, including:") }
+                        content = {
+                            Text("Our Network Services Portfolio:")
+                        }
                     )
                 }
                 Ul(
@@ -334,54 +457,36 @@ private fun ServiceOfferings() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
+                            content = { Text("Wired Network Design: ") }
+                        )
+                        Text("Expert design and implementation of stable wired networks.")
+                    }
+                    Li {
+                        Span(
+                            attrs = Modifier
+                                .fontWeight(FontWeight.SemiBold)
+                                .toAttrs(),
+                            content = { Text("Wireless Network Setup: ") }
+                        )
+                        Text("Seamless Wi-Fi solutions and access point installations.")
+                    }
+                    Li {
+                        Span(
+                            attrs = Modifier
+                                .fontWeight(FontWeight.SemiBold)
+                                .toAttrs(),
+                            content = { Text("Network Security: ") }
+                        )
+                        Text("Robust security measures, including firewall and intrusion detection.")
+                    }
+                    Li {
+                        Span(
+                            attrs = Modifier
+                                .fontWeight(FontWeight.SemiBold)
+                                .toAttrs(),
                             content = { Text("Network Monitoring: ") }
                         )
-                        Text("Continuous monitoring to identify and address issues before they impact your business.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Software Updates: ") }
-                        )
-                        Text("Keeping your software up-to-date to enhance performance and security.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Cybersecurity: ") }
-                        )
-                        Text("Protecting your data and systems with cutting-edge security measures.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Data Backup: ") }
-                        )
-                        Text("Ensuring your critical data is securely backed up and recoverable.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("IT Maintenance: ") }
-                        )
-                        Text("Proactive maintenance to keep your systems in peak condition.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("24/7 Support: ") }
-                        )
-                        Text("Round-the-clock assistance for all your IT needs.")
+                        Text("Real-time insights and proactive issue resolution.")
                     }
                 }
             }

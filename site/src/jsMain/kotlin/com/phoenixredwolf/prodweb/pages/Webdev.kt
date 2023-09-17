@@ -30,11 +30,11 @@ import org.jetbrains.compose.web.dom.*
 
 @Page
 @Composable
-fun Managed() {
-    val title = "Managed IT Services | Proactive IT Solutions | PhoenixRedwolf Digital Services"
-    val description = "Boost your business's efficiency and security with our Managed IT Services. PhoenixRedwolf Digital Services provides proactive IT solutions tailored to your needs. Explore our managed services today!"
+fun Webdev() {
+    val title = "Professional Web Development Services | Custom Websites | PhoenixRedwolf Digital Services"
+    val description = "Elevate your online presence with PhoenixRedwolf Digital Services. Our professional web development services craft custom websites that captivate your audience. Explore our web development solutions today!"
 
-    PageLayout(title,description) {
+    PageLayout(title, description) {
         Column(
             modifier = Modifier
                 .margin(top = 150.px)
@@ -49,10 +49,10 @@ fun Managed() {
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.End
                 ) {
-                        Image(
-                            src = Res.Image.managedserviceslg,
-                            modifier = ServiceImageStyle.toModifier()
-                        )
+                    Image(
+                        src = Res.Image.webdevlg,
+                        modifier = ServiceImageStyle.toModifier()
+                    )
                 }
                 Column(
                     modifier = Modifier.fillMaxWidth(),
@@ -67,7 +67,7 @@ fun Managed() {
                         H1(
                             attrs = ServiceH1Style.toModifier()
                                 .toAttrs(),
-                            content = { Text("Managed IT Services") }
+                            content = { Text("Web Development Services") }
                         )
                     }
                     Column(
@@ -80,14 +80,14 @@ fun Managed() {
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("Have dedicated IT experts backing your operations. Our managed IT services are staffed by experts in the field who stand ready to assist you.")
+                            Text("Establish your online presence and brand with a responsive web application that represents your brand and conveys your unique value.")
                         }
                         P(
                             attrs = ServicePHeadingStyle.toModifier()
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("Whether you need assistance with a specific project or a partner to handle all of your IT needs, we're ready to help")
+                            Text("We create unforgettable user experiences on all devices and will ensure your application is SEO compliant and optimized for Google search. From logos and icons to customer portals, we can handle all aspects of your web development needs.")
                         }
                         Row(
                             modifier = ServiceCBRowStyle.toModifier(),
@@ -105,7 +105,7 @@ fun Managed() {
             ) {
                 H3(
                     attrs = ServiceH3Style.toModifier().toAttrs(),
-                    content = { Text("Service Overview") }
+                    content = { Text("Elevate Your Online Presence with Expert Web Development") }
                 )
                 P(
                     attrs = Modifier
@@ -114,7 +114,7 @@ fun Managed() {
                         .padding(bottom = 10.px)
                         .toAttrs(),
                     content = {
-                        Text("Managed IT Services empower your business with proactive IT solutions. Say goodbye to unexpected downtime and IT headaches. Our expert team at PhoenixRedwolf Digital Services is dedicated to keeping your systems running smoothly, ensuring you can focus on what matters most—growing your business.")
+                        Text("Welcome to PhoenixRedwolf Digital Services, where we craft digital experiences that drive success. Our Web Development Services are designed to help businesses thrive in the online world. Explore how our expertise can transform your online presence.")
                     }
                 )
                 Benefits()
@@ -133,7 +133,7 @@ fun Managed() {
                 )
                 SimpleGrid(
                     modifier = Modifier.fillMaxWidth().margin(top = 25.px).alignContent(AlignContent.Center),
-                    numColumns = numColumns(base = 1, md = 3)
+                    numColumns = numColumns(base = 1, md=2, lg =3)
                 ) {
                     Column(
                         modifier = Modifier.fillMaxWidth(),
@@ -146,7 +146,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Customization")
+                                    Text("Designs as Unique as Your Brand")
                                 }
                             )
                             P(
@@ -155,7 +155,7 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("We understand that every business is unique. Our Managed IT Services are tailored to match your specific needs. Whether you're a small startup or a large enterprise, we'll create a solution that fits you perfectly.")
+                                Text("We specialize in creating custom website designs that capture the essence of your brand. Our designs are tailored to your unique needs and goals.")
                             }
 
                         }
@@ -171,7 +171,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Proactive Support")
+                                    Text("Unlock the Power of Online Sales")
                                 }
                             )
                             P(
@@ -180,7 +180,7 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Our approach is all about staying ahead of the curve. We don't wait for issues to arise—we actively monitor, identify, and resolve potential problems before they disrupt your business operations.")
+                                Text("Experience e-commerce solutions that drive sales and conversions. We'll help you set up online stores, integrate payment gateways, and manage product catalogs.")
                             }
                         }
                     }
@@ -195,7 +195,7 @@ fun Managed() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Scalability")
+                                    Text("Effortless Content Updates")
                                 }
                             )
                             P(
@@ -204,9 +204,178 @@ fun Managed() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Your business is dynamic, and your IT needs may change. Rest assured, our Managed IT Services are designed to scale with you. Whether you're expanding or streamlining, we'll adapt our solutions to match your evolving requirements.")
+                                Text("Keep your website content fresh and up-to-date with user-friendly CMS platforms like WordPress, Drupal, or Joomla.")
                             }
 
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Seamless Across All Devices")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We prioritize responsive web design, ensuring that your website functions flawlessly on all devices, from smartphones to desktops.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Boost Your Online Visibility")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Our web development incorporates SEO best practices to improve search engine rankings and drive organic traffic to your site.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Putting Users First")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We focus on creating intuitive interfaces and seamless navigation to enhance the overall user experience and keep visitors engaged.")
+                            }
+
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Lightning-Fast Loading")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Our performance optimization strategies ensure that your website loads quickly, providing a smooth user experience.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Protecting Your Digital Assets")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("We prioritize security, implementing measures such as SSL certificates and data encryption to safeguard your website and user data.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Flawless Functionality")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Our rigorous testing processes ensure that your website functions flawlessly and is free of bugs before launch.")
+                            }
+                        }
+                    }
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Column(
+                            modifier = ServiceColumnStyle.toModifier(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            H5(
+                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
+                                content = {
+                                    Text("Your Vision, Our Expertise")
+                                }
+                            )
+                            P(
+                                attrs = Modifier
+                                    .classNames("fs-5")
+                                    .textAlign(TextAlign.Justify)
+                                    .toAttrs()
+                            ) {
+                                Text("Our rigorous testing processes ensure that your website functions flawlessly and is free of bugs before launch.")
+                            }
                         }
                     }
                 }
@@ -244,7 +413,7 @@ private fun Benefits() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Why choose Managed IT Services from PhoenixRedwolf? The benefits are clear:") }
+                        content = { Text("Why Choose Our Web Development Services? The Benefits Are Remarkable:") }
                     )
                 }
                 Ul(
@@ -255,36 +424,36 @@ private fun Benefits() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Enhanced Security: ") }
+                            content = { Text("Enhanced User Experience: ") }
                         )
-                        Text("Protect your data and systems from cyber threats with our robust cybersecurity measures.")
+                        Text("Our designs prioritize user-friendly interfaces for increased engagement.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Reduced Downtime: ") }
+                            content = { Text("Improved Brand Visibility: ") }
                         )
-                        Text("We keep your IT infrastructure running efficiently, minimizing downtime and maximizing productivity.")
+                        Text("Stand out in the digital landscape and attract a wider audience.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Cost Savings: ") }
+                            content = { Text("Increased Engagement: ") }
                         )
-                        Text("Our tailored solutions optimize your IT budget, reducing unexpected expenses.")
+                        Text("Engage your visitors with compelling website features and content.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Proactive Support: ") }
+                            content = { Text("Higher Conversion Rates: ") }
                         )
-                        Text("Our team works tirelessly behind the scenes to prevent IT issues before they disrupt your operations.")
+                        Text("Optimize your site for conversions with our data-driven approach.")
                     }
                 }
             }
@@ -321,7 +490,7 @@ private fun ServiceOfferings() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Our Managed IT Services encompass a comprehensive range of offerings, including:") }
+                        content = { Text("Our Web Development Services Include:") }
                     )
                 }
                 Ul(
@@ -334,58 +503,39 @@ private fun ServiceOfferings() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Network Monitoring: ") }
+                            content = { Text("Custom Website Design: ") }
                         )
-                        Text("Continuous monitoring to identify and address issues before they impact your business.")
+                        Text("Unique, tailor-made designs to reflect your brand identity.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Software Updates: ") }
+                            content = { Text("E-commerce Development: ") }
                         )
-                        Text("Keeping your software up-to-date to enhance performance and security.")
+                        Text("Powerful online stores with seamless payment solutions.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Cybersecurity: ") }
+                            content = { Text("Content Management Systems (CMS): ") }
                         )
-                        Text("Protecting your data and systems with cutting-edge security measures.")
+                        Text("User-friendly platforms for easy content updates.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Data Backup: ") }
+                            content = { Text("Web Application Development: ") }
                         )
-                        Text("Ensuring your critical data is securely backed up and recoverable.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("IT Maintenance: ") }
-                        )
-                        Text("Proactive maintenance to keep your systems in peak condition.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("24/7 Support: ") }
-                        )
-                        Text("Round-the-clock assistance for all your IT needs.")
+                        Text("Innovative web apps to streamline business processes.")
                     }
                 }
             }
         }
     }
-
 }
