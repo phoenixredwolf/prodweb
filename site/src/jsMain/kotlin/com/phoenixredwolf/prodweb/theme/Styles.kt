@@ -215,7 +215,7 @@ val ServiceImageStyle by ComponentStyle {
     }
     Breakpoint.MD {
         Modifier
-            .borderRadius(bottomLeft = 50.percent)
+            .borderRadius(bottomLeft = 250.px)
             .margin(top = (-30).px)
             .maxWidth(50.percent)
             .opacity(100.percent)

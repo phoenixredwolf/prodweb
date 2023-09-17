@@ -196,7 +196,7 @@ enum class Consulting: BaseService {
         override val id: String
             get() = "pos"
         override val path: String
-            get() = "http://localpartners.toasttab.com/register-advocate/referred-by/BarretVogtman/"
+            get() = "/possystems"
         override val title: String
             get() = "Point of Sale Systems"
         override val desc: String

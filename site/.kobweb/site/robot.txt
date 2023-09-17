@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /private/        # Don't crawl pages in the /private/ directory
+Disallow: /admin/          # Don't crawl pages in the /admin/ directory
+Disallow: /images/         # Don't crawl images
+Disallow: /cgi-bin/        # Don't crawl scripts in /cgi-bin/
+Disallow: /tmp/            # Don't crawl temporary files

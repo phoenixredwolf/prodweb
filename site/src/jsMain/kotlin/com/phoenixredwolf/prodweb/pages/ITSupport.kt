@@ -3,8 +3,8 @@ package com.phoenixredwolf.prodweb.pages
 import androidx.compose.runtime.Composable
 import com.phoenixredwolf.prodweb.components.layouts.PageLayout
 import com.phoenixredwolf.prodweb.components.widgets.ContactButton
+import com.phoenixredwolf.prodweb.components.widgets.ScheduleConsult
 import com.phoenixredwolf.prodweb.theme.*
-import com.phoenixredwolf.prodweb.utility.Constants
 import com.phoenixredwolf.prodweb.utility.Res
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
@@ -21,7 +21,6 @@ import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
-import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.AlignContent
 import org.jetbrains.compose.web.css.percent
@@ -120,18 +119,7 @@ fun ITSupport() {
                 )
                 Benefits()
                 ServiceOfferings()
-                H3(
-                    attrs = ServiceH3Style.toModifier().toAttrs(),
-                    content = {
-                        Link(
-                            modifier = ContactLinkStyle.toModifier(),
-                            path = Constants.CONTACT,
-                            text = "Schedule a call"
-                        )
-                        Br()
-                        Text("For A Quote Today!!!")
-                    }
-                )
+                ScheduleConsult()
                 SimpleGrid(
                     modifier = Modifier.fillMaxWidth().margin(top = 25.px).alignContent(AlignContent.Center),
                     numColumns = numColumns(base = 1, md=2, lg =3)
@@ -147,7 +135,7 @@ fun ITSupport() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("We're Here for You Around the Clock")
+                                    Text("Customized Technology Solutions")
                                 }
                             )
                             P(
@@ -156,7 +144,7 @@ fun ITSupport() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("We understand that IT issues can occur at any time. That's why our IT support services are available 24/7, ensuring you have access to assistance whenever you need it.")
+                                Text("Our consultants offer tailored technology solutions, including software recommendations, hardware upgrades, and network improvements. We ensure that every solution we propose aligns with your unique business requirements.")
                             }
 
                         }
@@ -172,7 +160,7 @@ fun ITSupport() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Quick Solutions, No Matter Where You Are")
+                                    Text("Choosing the Right Partners")
                                 }
                             )
                             P(
@@ -181,7 +169,7 @@ fun ITSupport() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("Our remote support capabilities allow us to diagnose and resolve issues efficiently, without the need for on-site visits. This means quicker solutions for you and less downtime for your business.")
+                                Text("We assist you in selecting the best IT vendors and solutions, ensuring they fit seamlessly into your ecosystem. We have established partnerships with trusted providers to simplify the selection process.")
                             }
                         }
                     }
@@ -196,7 +184,7 @@ fun ITSupport() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("When In-Person Assistance is Needed")
+                                    Text("Staying Compliant")
                                 }
                             )
                             P(
@@ -205,7 +193,7 @@ fun ITSupport() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("For more complex issues that require on-site attention, our IT support team is ready to be at your location promptly to address any challenges your business faces.")
+                                Text("We ensure that your IT environment adheres to industry regulations and compliance standards, reducing risks and potential legal issues.")
                             }
 
                         }
@@ -221,7 +209,7 @@ fun ITSupport() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Tailored to Your Unique Needs")
+                                    Text("Efficient Implementation")
                                 }
                             )
                             P(
@@ -230,7 +218,7 @@ fun ITSupport() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("We understand that every business is different. Our IT support solutions are customized to match your specific needs, ensuring a personalized experience and optimal IT performance.")
+                                Text("Our project management expertise guarantees efficient implementation of IT initiatives. We handle all aspects, from planning to execution, so you can focus on your core business.")
                             }
 
                         }
@@ -246,7 +234,7 @@ fun ITSupport() {
                             H5(
                                 attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
                                 content = {
-                                    Text("Your Data, Our Priority")
+                                    Text("Knowledge Transfer")
                                 }
                             )
                             P(
@@ -255,33 +243,8 @@ fun ITSupport() {
                                     .textAlign(TextAlign.Justify)
                                     .toAttrs()
                             ) {
-                                Text("We take the security and privacy of your data seriously. Our IT support interactions are conducted with the utmost care to protect your sensitive information.")
+                                Text("Our commitment doesn't end with recommendations. We provide training and ongoing support to empower your team with the skills and knowledge needed to maximize the benefits of your technology investments.")
                             }
-                        }
-                    }
-                    Column(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Column(
-                            modifier = ServiceColumnStyle.toModifier(),
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            H5(
-                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
-                                content = {
-                                    Text("Available When You Need Us Most")
-                                }
-                            )
-                            P(
-                                attrs = Modifier
-                                    .classNames("fs-5")
-                                    .textAlign(TextAlign.Justify)
-                                    .toAttrs()
-                            ) {
-                                Text("IT emergencies don't wait for business hours. That's why we offer emergency IT support around the clock. You can count on us to be there when you need us most, ensuring your IT infrastructure remains resilient.")
-                            }
-
                         }
                     }
                 }
@@ -319,7 +282,7 @@ private fun Benefits() {
                 ) {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Why choose our IT Support Services? The benefits are clear:") }
+                        content = { Text("Why Choose Our IT Consulting Services? The Advantages Are Clear:") }
                     )
                 }
                 Ul(
@@ -330,36 +293,45 @@ private fun Benefits() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Swift Issue Resolution: ") }
+                            content = { Text("Strategic Technology Planning: ") }
                         )
-                        Text("Experience quick and effective issue resolution to minimize downtime.")
+                        Text("Our IT consultants work closely with your team to create comprehensive technology roadmaps that support your business vision.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Reduced Downtime: ") }
+                            content = { Text("Cost Optimization: ") }
                         )
-                        Text("Maximize productivity with minimal interruptions to your operations.")
+                        Text("We analyze your current IT setup and identify areas where cost savings can be realized without compromising quality.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Cost-Effective: ") }
+                            content = { Text("Efficiency Enhancement: ") }
                         )
-                        Text("Our solutions help you manage IT costs efficiently.")
+                        Text("Our solutions are geared toward streamlining processes, reducing downtime, and boosting overall productivity.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Enhanced Productivity: ") }
+                            content = { Text("Risk Mitigation: ") }
                         )
-                        Text("A well-supported IT infrastructure leads to improved workflow and productivity gains.")
+                        Text("We conduct thorough security audits and develop strategies to safeguard your data and systems.")
+                    }
+                    Li {
+                        Span(
+                            attrs = Modifier
+                                .fontWeight(FontWeight.SemiBold)
+                                .toAttrs(),
+                            content = { Text("Scalability: ") }
+                        )
+                        Text("Our recommendations and solutions are scalable, ensuring they grow with your business.")
                     }
                 }
             }
@@ -397,7 +369,7 @@ private fun ServiceOfferings() {
                     H5(
                         attrs = ServiceH5Style.toModifier().toAttrs(),
                         content = {
-                            Text("Our IT Support Services: A Backbone for Your Business")
+                            Text("Our IT Consulting Services Cover:")
                         }
                     )
                 }
@@ -411,36 +383,36 @@ private fun ServiceOfferings() {
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Helpdesk Support: ") }
+                            content = { Text("Strategic Planning: ") }
                         )
-                        Text("Prompt assistance from our knowledgeable helpdesk team.")
+                        Text("We help you create a roadmap that aligns IT initiatives with your business goals.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Hardware & Software Troubleshooting: ") }
+                            content = { Text("Infrastructure Assessment: ") }
                         )
-                        Text("Swift resolution of hardware and software-related issues.")
+                        Text("Our experts evaluate your existing IT infrastructure, identifying areas for improvement.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Network Assistance: ") }
+                            content = { Text("Security Audits: ") }
                         )
-                        Text("Ensuring your network runs smoothly and securely")
+                        Text("We assess your cybersecurity measures, recommending enhancements to protect your digital assets.")
                     }
                     Li {
                         Span(
                             attrs = Modifier
                                 .fontWeight(FontWeight.SemiBold)
                                 .toAttrs(),
-                            content = { Text("Remote Support: ") }
+                            content = { Text("Cloud Strategy: ") }
                         )
-                        Text("Quick solutions through remote assistance.")
+                        Text("We guide you in adopting cloud technologies to enhance agility and reduce costs.")
                     }
                 }
             }

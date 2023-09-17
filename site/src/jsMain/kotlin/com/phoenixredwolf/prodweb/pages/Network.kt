@@ -3,8 +3,8 @@ package com.phoenixredwolf.prodweb.pages
 import androidx.compose.runtime.Composable
 import com.phoenixredwolf.prodweb.components.layouts.PageLayout
 import com.phoenixredwolf.prodweb.components.widgets.ContactButton
+import com.phoenixredwolf.prodweb.components.widgets.ScheduleConsult
 import com.phoenixredwolf.prodweb.theme.*
-import com.phoenixredwolf.prodweb.utility.Constants
 import com.phoenixredwolf.prodweb.utility.Res
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
@@ -21,7 +21,6 @@ import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
-import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.AlignContent
 import org.jetbrains.compose.web.css.percent
@@ -119,18 +118,7 @@ fun Network() {
                 )
                 Benefits()
                 ServiceOfferings()
-                H3(
-                    attrs = ServiceH3Style.toModifier().toAttrs(),
-                    content = {
-                        Link(
-                            modifier = ContactLinkStyle.toModifier(),
-                            path = Constants.CONTACT,
-                            text = "Schedule a call"
-                        )
-                        Br()
-                        Text("For A Quote Today!!!")
-                    }
-                )
+                ScheduleConsult()
                 SimpleGrid(
                     modifier = Modifier.fillMaxWidth().margin(top = 25.px).alignContent(AlignContent.Center),
                     numColumns = numColumns(base = 1, md=2, lg =3)
