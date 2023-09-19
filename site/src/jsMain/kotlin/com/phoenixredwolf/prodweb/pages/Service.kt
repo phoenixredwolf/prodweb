@@ -21,6 +21,7 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.AlignContent
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
 
@@ -52,13 +53,20 @@ fun Service() {
             PageTitle("", "Services We Offer", colormode = colorMode)
             SimpleGrid(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .margin(top = 25.px)
+                    .rowGap(20.px)
                     .fillMaxWidth(90.percent)
                     .alignContent(AlignContent.Center),
                 numColumns = numColumns( 1, md = 2, lg = 3, xl = 4)
             ) {
                 Services.values().forEach {service ->
-                    ServiceCard(service)
+                    Div(
+                        attrs = Modifier
+                            .height(450.px)
+                            .toAttrs()
+                    ) {
+                        ServiceCard(service)
+                    }
                 }
             }
         }

@@ -21,6 +21,7 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.AlignContent
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
 
@@ -52,13 +53,19 @@ fun Consult() {
             PageTitle("", "Expert Recommendations To Get Your Best Solutions", colormode = colorMode)
             SimpleGrid(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .rowGap(20.px)
                     .fillMaxWidth(90.percent)
                     .alignContent(AlignContent.Center),
                 numColumns = numColumns( 1, md = 2, lg = 3, xl = 4)
             ) {
                 Consulting.values().forEach { consult->
-                    ServiceCard(consulting = consult)
+                    Div(
+                        attrs = Modifier
+                            .height(450.px)
+                            .toAttrs()
+                    ) {
+                        ServiceCard(consulting = consult)
+                    }
                 }
             }
         }

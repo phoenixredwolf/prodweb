@@ -9,7 +9,6 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.attrsModifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.hover
@@ -69,19 +68,12 @@ val CardStyle by ComponentStyle {
     base {
         Modifier
             .backgroundColor(surfaceLight)
-            .bottom(0.px)
             .boxShadow(0.px, 0.px, 10.px, 2.px, Colors.DarkGray)
-            .left(0.px)
             .overflow(Overflow.Hidden)
             .position(Position.Relative)
-            .right(0.px)
-            .top(0.px)
-            .styleModifier {
-                property("-webkit-box-shadow", "0px 0px 10px 2px rgba(0,0,0,0.3)")
-                property("-moz-box-shadow", "0px 0px 10px 2px rgba(0,0,0,0.3)")
-                property("margin", "auto")
-            }
             .size(300.px)
+            .margin(numericAuto)
+            .transition(CSSTransition("all", duration = 300.ms))
 
     }
     hover {
@@ -91,7 +83,7 @@ val CardStyle by ComponentStyle {
     }
     cssRule(" .transition") {
         Modifier
-            .transition(CSSTransition("all", 0.3.s, TransitionTimingFunction.cubicBezier(0.3, 0.0, 0.3, 1.3)))
+            .transition(CSSTransition("all", duration = 300.ms))
     }
     cssRule(":hover .cta-container") {
         Modifier
@@ -132,7 +124,7 @@ val Card_circleStyle by ComponentStyle{
     }
     cssRule(" .transition") {
         Modifier
-            .transition(CSSTransition("all", 0.3.s, TransitionTimingFunction.cubicBezier(0.0, 0.0, 0.0, 1.3)))
+            .transition(CSSTransition("all", duration = 300.ms))
     }
 
 }
@@ -152,14 +144,14 @@ val H2CircleCardStyle by ComponentStyle{
     }
     cssRule(" .transition") {
         Modifier
-            .transition(CSSTransition("all", 0.3.s, TransitionTimingFunction.cubicBezier(0.3, 0.0, 0.0, 1.3)))
+            .transition(CSSTransition("all", duration = 300.ms))
     }
 }
 
 val PCircleCardStyle by ComponentStyle {
     base {
         Modifier
-            .color(Colors.Gray)
+            .color(secondaryLight)
             .fontFamily("Raleway", "sans-serif")
             .fontSize(100.percent)
             .fontWeight(FontWeight.Normal)
@@ -177,11 +169,11 @@ val CtaContainerStyle by ComponentStyle{
             .position(Position.Absolute)
             .textAlign(TextAlign.Center)
             .fillMaxWidth()
-            .margin(top = 320.px)
+            .margin(top = 300.px, bottom = 20.px)
     }
     cssRule(" .transition") {
         Modifier
-            .transition(CSSTransition("all", 0.3.s, TransitionTimingFunction.cubicBezier(0.3, 0.0, 0.0, 1.3)))
+            .transition(CSSTransition("all", duration = 300.ms))
     }
 }
 
@@ -202,31 +194,13 @@ val CtaStyle by ComponentStyle {
             .lineHeight(36.px)
             .padding(0.px, 2.cssRem)
             .textDecorationLine(TextDecorationLine.None)
-            .transition(CSSTransition("all", 0.2.s, TransitionTimingFunction.EaseOut))
-            .styleModifier {
-                property("-moz-border-radius", "2px")
-                property("-moz-transition", "0.2s ease-out")
-                property("-ms-transition", "0.2s ease-out")
-                property("-o-transition", "0.2s ease-out")
-                property("-webkit-border-radius", "2px")
-                property("-webkit-transition", "0.2s ease-out")
-            }
-            .margin(bottom = 15.px)
+            .transition(CSSTransition("all", 200.ms, TransitionTimingFunction.EaseOut))
+            .margin(bottom = 25.px)
     }
     hover {
         Modifier
             .backgroundColor(secondaryLight)
-            .boxShadow(
-                0.px,
-                8.px,
-                17.px,
-                0.px,
-                Colors.LightGray
-            )
+            .boxShadow( 0.px, 8.px, 17.px, 0.px, Colors.LightGray)
             .color(onSecondaryLight)
-            .styleModifier {
-                property("-moz-box-shadow", "0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)")
-                property("-webkit-box-shadow", "0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)")
-            }
     }
 }

@@ -115,11 +115,20 @@ private fun HeaderLogo(
                 size = IconSize.XL
             )
         }
-        Image(
-            src = Res.Image.logo,
-            desc = "Logo Image",
-            autoPrefix = true
-        )
+        A(
+            attrs = Modifier
+                .attrsModifier {
+                    attr("href", "/")
+                }
+                .toAttrs()
+        ) {
+            Image(
+                src = Res.Image.logo,
+                desc = "Logo Image",
+                modifier = Modifier
+                    .cursor(Cursor.Pointer)
+            )
+        }
 
     }
 }
