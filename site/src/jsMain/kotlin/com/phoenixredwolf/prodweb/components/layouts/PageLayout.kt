@@ -11,6 +11,7 @@ import com.phoenixredwolf.prodweb.theme.surfaceDark
 import com.phoenixredwolf.prodweb.theme.surfaceLight
 import com.varabyte.kobweb.compose.css.AlignSelf
 import com.varabyte.kobweb.compose.css.TextAlign
+import com.varabyte.kobweb.compose.dom.ref
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
@@ -35,6 +36,23 @@ fun PageLayout(
         document.title = title
         document.querySelector("""meta[name="description"]""")!!.setAttribute("content", description)
     }
+    Box (
+        ref = ref {
+            val script = document.createElement("script")
+            script.asDynamic().src = "https://www.googletagmanager.com/gtag/js?id=G-K9W7KBLCQ4"
+            it.appendChild(script)
+            val scriptElement = document.createElement("script")
+            scriptElement.innerHTML = "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\n\ngtag('config', 'G-K9W7KBLCQ4');"
+            it.appendChild(scriptElement)
+        }
+    )
+    Box (
+        ref = ref {
+            val scriptElement = document.createElement("script")
+            scriptElement.innerHTML = "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\n\ngtag('config', 'G-K9W7KBLCQ4');"
+            it.appendChild(scriptElement)
+        }
+    )
     val breakpoint = rememberBreakpoint()
     var menuOpened by remember { mutableStateOf(false) }
     var colorMode by ColorMode.currentState

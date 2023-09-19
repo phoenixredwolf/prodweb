@@ -43,6 +43,7 @@ fun Social() {
         ) {
             Box(
                 modifier = Modifier.fillMaxWidth()
+
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -50,8 +51,7 @@ fun Social() {
                 ) {
                     Image(
                         src = Res.Image.socmedlg,
-                        modifier = ServiceImageStyle.toModifier()
-                    )
+                        modifier = ServiceImageStyle.toModifier())
                 }
                 Column(
                     modifier = Modifier.fillMaxWidth(),

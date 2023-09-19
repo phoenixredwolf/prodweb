@@ -209,7 +209,7 @@ val ServiceImageStyle by ComponentStyle {
         Modifier
             .margin(top = (-30).px)
             .width(100.percent)
-            .opacity(50.percent)
+            .opacity(40.percent)
             .height(auto)
             .transition(CSSTransition("all", duration = 500.ms))
     }

@@ -245,9 +245,17 @@ private fun PhoneWidget() {
                 .color(secondaryLight),
             size = IconSize.LG
         )
-        Text("(856) 347-0392 or ")
+        A(
+            attrs = LinkBaseStyle.toModifier()
+                .attrsModifier {
+                    attr("href", "tel:8563470392")
+                }
+                .toAttrs(),
+            content = { Text("(856) 347-0392") }
+        )
+        Text(" or ")
         Link(
-            modifier = LinkBaseStyle.toModifier().padding(left = 5.px, right = 10.px),
+            modifier = LinkBaseStyle.toModifier().padding(right = 10.px),
             path = CONTACT,
             text = "Schedule a Call!"
         )

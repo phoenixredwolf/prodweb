@@ -28,6 +28,7 @@ fun ContactButton() {
         attrs = ContactButtonStyle.toModifier()
             .width(Width.MaxContent)
             .borderRadius(r=10.px)
+            .zIndex(1)
             .attrsModifier {
                 attr("href", "/contact")
             }
