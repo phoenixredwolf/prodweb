@@ -53,6 +53,7 @@ fun Consult() {
             PageTitle("", "Expert Recommendations To Get Your Best Solutions", colormode = colorMode)
             SimpleGrid(
                 modifier = Modifier
+                    .margin(top = 25.px)
                     .rowGap(20.px)
                     .fillMaxWidth(90.percent)
                     .alignContent(AlignContent.Center),
@@ -64,7 +65,7 @@ fun Consult() {
                             .height(450.px)
                             .toAttrs()
                     ) {
-                        ServiceCard(consulting = consult)
+                        ServiceCard(consult)
                     }
                 }
             }

@@ -2,7 +2,7 @@ package com.phoenixredwolf.prodweb.pages
 
 import androidx.compose.runtime.Composable
 import com.phoenixredwolf.prodweb.components.layouts.PageLayout
-import com.phoenixredwolf.prodweb.components.models.Consulting.RISK
+import com.phoenixredwolf.prodweb.components.models.Consulting.POS
 import com.phoenixredwolf.prodweb.components.widgets.*
 import com.phoenixredwolf.prodweb.theme.*
 import com.phoenixredwolf.prodweb.utility.Res
@@ -26,9 +26,9 @@ import org.jetbrains.compose.web.dom.*
 
 @Page
 @Composable
-fun Risk() {
-    val title = "Comprehensive Risk Assessment Services | Protect Your Business | PhoenixRedwolf Digital Services"
-    val description = "Safeguard your business with our expert risk assessment services at PhoenixRedwolf Digital Services. Identify vulnerabilities and mitigate potential threats. Explore comprehensive risk assessment now!"
+fun PosSystems() {
+    val title = "Point of Sale (POS) Consulting Services | Optimize Retail Operations | PhoenixRedwolf Digital Services"
+    val description = "Enhance your retail business with expert Point of Sale (POS) consulting services at PhoenixRedwolf Digital Services. Streamline operations, improve customer experiences, and boost profits!"
 
     PageLayout(title, description) {
         Column(
@@ -46,7 +46,7 @@ fun Risk() {
                     horizontalArrangement = Arrangement.End
                 ) {
                     Image(
-                        src = Res.Image.risklg,
+                        src = Res.Image.possystemlg,
                         modifier = ServiceImageStyle.toModifier()
                     )
                 }
@@ -63,7 +63,7 @@ fun Risk() {
                         H1(
                             attrs = ServiceH1Style.toModifier()
                                 .toAttrs(),
-                            content = { Text("Risk Assessments") }
+                            content = { Text("Point of Sale Systems") }
                         )
                     }
                     Column(
@@ -76,14 +76,14 @@ fun Risk() {
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("Discover and mitigate risks effectively with PhoenixRedwolf's Risk Assessment Consulting. Our expert analysis provides the insight needed to safeguard your business from potential threats.")
+                            Text("Elevate your retail operations with PhoenixRedwolf's POS Consulting, in partnership with Toast. Unlock efficiency, customer satisfaction, and profitability with our expertise.")
                         }
                         P(
                             attrs = ServicePHeadingStyle.toModifier()
                                 .classNames("fs-4")
                                 .toAttrs()
                         ) {
-                            Text("With PhoenixRedwolf's Risk Assessment services, you gain a strategic partner dedicated to safeguarding your business by identifying, evaluating, and mitigating potential risks, ensuring your continued success in an ever-changing business environment.")
+                            Text("With PhoenixRedwolf's POS Consulting services in partnership with Toast, you gain a strategic advantage in optimizing your point of sale system, enhancing customer experiences, and ultimately increasing profitability for your retail business.")
                         }
                         Row(
                             modifier = ServiceCBRowStyle.toModifier(),
@@ -101,7 +101,7 @@ fun Risk() {
             ) {
                 H3(
                     attrs = ServiceH3Style.toModifier().toAttrs(),
-                    content = { Text("Understanding and Mitigating Risks") }
+                    content = { Text("Optimize Your Retail Operations with POS Consulting") }
                 )
                 P(
                     attrs = Modifier
@@ -110,11 +110,11 @@ fun Risk() {
                         .padding(bottom = 10.px)
                         .toAttrs(),
                     content = {
-                        Text("At PhoenixRedwolf Digital Services, our Risk Assessment services are designed to provide you with a comprehensive understanding of the potential risks your business may face. We recognize that proactive risk assessment is essential for safeguarding your operations and assets in today's rapidly evolving business landscape.")
+                        Text("At PhoenixRedwolf Digital Services, our POS Consulting services in partnership with Toast are designed to empower retailers with efficient, customer-centric, and profitable point of sale solutions. We understand the pivotal role that a well-optimized POS system plays in enhancing retail operations.")
                     }
                 )
-                Benefits(RISK)
-                ServiceOfferings(RISK)
+                Benefits(POS)
+                ServiceOfferings(POS)
                 ScheduleConsult()
                 SimpleGrid(
                     modifier = Modifier
@@ -123,7 +123,7 @@ fun Risk() {
                         .fillMaxWidth(),
                     numColumns = numColumns(1, md=2, lg=3, xl = 4)
                 ) {
-                    RISK.cards.forEach { cardInfo ->
+                    POS.cards.forEach { cardInfo ->
                         Div {
                             BottomCards(cardInfo)
                         }

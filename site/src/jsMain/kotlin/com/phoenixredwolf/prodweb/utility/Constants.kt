@@ -63,4 +63,5 @@ object Res {
         const val phone = "/images/ringingphone.gif"
         const val cell = "/images/cellphone.gif"
     }
+
 }

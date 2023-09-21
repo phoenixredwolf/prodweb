@@ -1,8 +1,7 @@
 package com.phoenixredwolf.prodweb.components.widgets
 
 import androidx.compose.runtime.Composable
-import com.phoenixredwolf.prodweb.components.models.Consulting
-import com.phoenixredwolf.prodweb.components.models.Services
+import com.phoenixredwolf.prodweb.components.models.BaseService
 import com.phoenixredwolf.prodweb.theme.*
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.css.functions.url
@@ -22,62 +21,58 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun ServiceCard(
-    services: Services? = null,
-    consulting: Consulting? = null
+    service: BaseService
 ) {
-    val service = services ?: consulting
-    if (service != null) {
+    Div(
+        attrs = ServiceCardStyle.toModifier()
+            .classNames("card", "transition")
+            .toAttrs()
+    ) {
+        H2(
+            attrs = ServiceH2CircleCardStyle.toModifier()
+                .classNames("transition")
+                .toAttrs()
+        ) { Text(service.title) }
         Div(
-            attrs = ServiceCardStyle.toModifier()
-                .classNames("card", "transition")
+            attrs = ServiceCtaContainerStyle.toModifier()
+                .classNames("cta-container", "transition")
                 .toAttrs()
         ) {
-            H2(
-                attrs = ServiceH2CircleCardStyle.toModifier()
-                    .classNames("transition")
-                    .toAttrs()
-            ) { Text(service.title) }
             Div(
-                attrs = ServiceCtaContainerStyle.toModifier()
-                    .classNames("cta-container", "transition")
-                    .toAttrs()
+                attrs = Modifier
+                    .height(100.px)
+                    .margin(bottom = 10.px).toAttrs()
             ) {
-                Div(
-                    attrs = Modifier
-                        .height(100.px)
-                        .margin(bottom = 10.px).toAttrs()
-                ) {
-                    Text(service.desc)
-                }
-                Div(
-                    attrs = Modifier
-                        .alignContent(org.jetbrains.compose.web.css.AlignContent.Baseline)
-                        .toAttrs()
-                ){
-                    A(
-                        attrs = ServiceCtaStyle.toModifier()
-                            .attrsModifier { attr("href", service.path) }
-                            .toAttrs()
-                    ) {
-                        Text("Learn More")
-                    }
-                }
+                Text(service.desc)
             }
             Div(
-                attrs = ServiceCard_circleStyle.toModifier()
-                    .classNames("card_circle", "transition")
-                    .background(
-                        secondaryLight,
-                        CSSBackground(
-                            image = BackgroundImage.of(url(service.imgPath)),
-                            repeat = BackgroundRepeat.NoRepeat,
-                            size = BackgroundSize.Cover,
-                            position = BackgroundPosition.of(CSSPosition.Bottom)
-                        )
-                    )
+                attrs = Modifier
+                    .alignContent(org.jetbrains.compose.web.css.AlignContent.Baseline)
                     .toAttrs()
-            )
+            ){
+                A(
+                    attrs = ServiceCtaStyle.toModifier()
+                        .attrsModifier { attr("href", service.path) }
+                        .toAttrs()
+                ) {
+                    Text("Learn More")
+                }
+            }
         }
+        Div(
+            attrs = ServiceCard_circleStyle.toModifier()
+                .classNames("card_circle", "transition")
+                .background(
+                    secondaryLight,
+                    CSSBackground(
+                        image = BackgroundImage.of(url(service.imgPath)),
+                        repeat = BackgroundRepeat.NoRepeat,
+                        size = BackgroundSize.Cover,
+                        position = BackgroundPosition.of(CSSPosition.Bottom)
+                    )
+                )
+                .toAttrs()
+        )
     }
 }
 

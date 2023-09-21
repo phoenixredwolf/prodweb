@@ -38,6 +38,18 @@ kobweb {
                         """.trimIndent()
                     )
                 }
+                script(type="text/javascript") {
+                    consumer.onTagContent(
+                        """
+                        (function() { var zanalytics_ = document.createElement('script'); 
+                        zanalytics_.type = 'text/javascript';
+                        zanalytics_.async = false; 
+                        zanalytics_.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'static.ziftsolutions.com/analytics/8a99822b8a8c5d9a018a8f42aae56814.js';
+                        document.getElementsByTagName('script')[0].parentNode.appendChild(zanalytics_);
+                        })();
+                        """.trimIndent()
+                    )
+                }
                 link {
                     rel = "stylesheet"
                     href = "https://fonts.googleapis.com/icon?family=Material+Icons"

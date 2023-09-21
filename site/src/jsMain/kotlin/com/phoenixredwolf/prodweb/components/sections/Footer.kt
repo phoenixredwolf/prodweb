@@ -71,6 +71,7 @@ fun Footer(modifier: Modifier = Modifier) {
                     ) {
                         Copyright()
                         PrivacyPolicyLink()
+                        TermsLink()
                         CreditPage()
                     }
                 }
@@ -147,6 +148,17 @@ private fun PrivacyPolicyLink() {
     ) {
         Text("Privacy Policy")
     }
+}
+
+@Composable
+private fun TermsLink() {
+    Link(
+        modifier = LinkBaseStyle.toModifier()
+            .textAlign(TextAlign.Center)
+            .fontSize(FontSize.Small),
+        path = "/terms",
+        content = { Text("Terms & Conditions") }
+    )
 }
 
 @Composable

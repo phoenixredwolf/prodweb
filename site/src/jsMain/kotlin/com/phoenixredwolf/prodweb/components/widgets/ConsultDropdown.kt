@@ -60,7 +60,7 @@ fun ConsultDropdown() {
                         modifier = Dropdowncardstyle.toModifier(),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        consult.icon()
+                        consult.menuIcon()
                         Link(
                             path = consult.path,
                             text = consult.title,
@@ -82,7 +82,7 @@ fun ConsultDropdown() {
                         Row(
                             modifier = Modifier.width(50.px)
                         ) {
-                            consult.icon()
+                            consult.menuIcon()
                         }
                         Link(
                             path = consult.path,

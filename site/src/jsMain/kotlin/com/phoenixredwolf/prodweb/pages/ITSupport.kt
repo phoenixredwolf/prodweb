@@ -2,13 +2,11 @@ package com.phoenixredwolf.prodweb.pages
 
 import androidx.compose.runtime.Composable
 import com.phoenixredwolf.prodweb.components.layouts.PageLayout
-import com.phoenixredwolf.prodweb.components.widgets.ContactButton
-import com.phoenixredwolf.prodweb.components.widgets.ScheduleConsult
+import com.phoenixredwolf.prodweb.components.models.Services.ITSUP
+import com.phoenixredwolf.prodweb.components.widgets.*
 import com.phoenixredwolf.prodweb.theme.*
 import com.phoenixredwolf.prodweb.utility.Res
-import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
-import com.varabyte.kobweb.compose.css.Width
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -22,7 +20,6 @@ import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.style.toModifier
-import org.jetbrains.compose.web.css.AlignContent
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.*
@@ -105,7 +102,7 @@ fun ITSupport() {
             ) {
                 H3(
                     attrs = ServiceH3Style.toModifier().toAttrs(),
-                    content = { Text("Service Overview") }
+                    content = { Text("Our IT Support Services: A Backbone for Your Business") }
                 )
                 P(
                     attrs = Modifier
@@ -114,309 +111,26 @@ fun ITSupport() {
                         .padding(bottom = 10.px)
                         .toAttrs(),
                     content = {
-                        Text("Managed IT Services empower your business with proactive IT solutions. Say goodbye to unexpected downtime and IT headaches. Our expert team at PhoenixRedwolf Digital Services is dedicated to keeping your systems running smoothly, ensuring you can focus on what matters most—growing your business.")
+                        Text("Discover reliable IT support services designed to keep your business running smoothly. Our team of experts is dedicated to ensuring your technology works seamlessly, allowing you to focus on what matters most—growing your business.")
                     }
                 )
-                Benefits()
-                ServiceOfferings()
+                Benefits(ITSUP)
+                ServiceOfferings(ITSUP)
                 ScheduleConsult()
                 SimpleGrid(
-                    modifier = Modifier.fillMaxWidth().margin(top = 25.px).alignContent(AlignContent.Center),
-                    numColumns = numColumns(base = 1, md=2, lg =3)
+                    modifier = Modifier
+                        .margin(top = 10.px, bottom = 200.px)
+                        .rowGap(200.px)
+                        .fillMaxWidth(),
+                    numColumns = numColumns(1, md=2, lg=3, xl = 4)
                 ) {
-                    Column(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Column(
-                            modifier = ServiceColumnStyle.toModifier(),
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            H5(
-                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
-                                content = {
-                                    Text("Customized Technology Solutions")
-                                }
-                            )
-                            P(
-                                attrs = Modifier
-                                    .classNames("fs-5")
-                                    .textAlign(TextAlign.Justify)
-                                    .toAttrs()
-                            ) {
-                                Text("Our consultants offer tailored technology solutions, including software recommendations, hardware upgrades, and network improvements. We ensure that every solution we propose aligns with your unique business requirements.")
-                            }
-
-                        }
-                    }
-                    Column(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Column(
-                            modifier = ServiceColumnStyle.toModifier(),
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            H5(
-                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
-                                content = {
-                                    Text("Choosing the Right Partners")
-                                }
-                            )
-                            P(
-                                attrs = Modifier
-                                    .classNames("fs-5")
-                                    .textAlign(TextAlign.Justify)
-                                    .toAttrs()
-                            ) {
-                                Text("We assist you in selecting the best IT vendors and solutions, ensuring they fit seamlessly into your ecosystem. We have established partnerships with trusted providers to simplify the selection process.")
-                            }
-                        }
-                    }
-                    Column(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Column(
-                            modifier = ServiceColumnStyle.toModifier(),
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            H5(
-                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
-                                content = {
-                                    Text("Staying Compliant")
-                                }
-                            )
-                            P(
-                                attrs = Modifier
-                                    .classNames("fs-5")
-                                    .textAlign(TextAlign.Justify)
-                                    .toAttrs()
-                            ) {
-                                Text("We ensure that your IT environment adheres to industry regulations and compliance standards, reducing risks and potential legal issues.")
-                            }
-
-                        }
-                    }
-                    Column(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Column(
-                            modifier = ServiceColumnStyle.toModifier(),
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            H5(
-                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
-                                content = {
-                                    Text("Efficient Implementation")
-                                }
-                            )
-                            P(
-                                attrs = Modifier
-                                    .classNames("fs-5")
-                                    .textAlign(TextAlign.Justify)
-                                    .toAttrs()
-                            ) {
-                                Text("Our project management expertise guarantees efficient implementation of IT initiatives. We handle all aspects, from planning to execution, so you can focus on your core business.")
-                            }
-
-                        }
-                    }
-                    Column(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Column(
-                            modifier = ServiceColumnStyle.toModifier(),
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            H5(
-                                attrs = ServiceH5Style.toModifier().fillMaxWidth().toAttrs(),
-                                content = {
-                                    Text("Knowledge Transfer")
-                                }
-                            )
-                            P(
-                                attrs = Modifier
-                                    .classNames("fs-5")
-                                    .textAlign(TextAlign.Justify)
-                                    .toAttrs()
-                            ) {
-                                Text("Our commitment doesn't end with recommendations. We provide training and ongoing support to empower your team with the skills and knowledge needed to maximize the benefits of your technology investments.")
-                            }
+                    ITSUP.cards.forEach { cardInfo ->
+                        Div {
+                            BottomCards(cardInfo)
                         }
                     }
                 }
             }
         }
     }
-}
-
-@Composable
-private fun Benefits() {
-    SimpleGrid(
-        modifier = Modifier.fillMaxWidth(),
-        numColumns = numColumns(base = 1, md=4)
-    ) {
-        Row(
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            H3(
-                attrs = ServiceH3Style.toModifier().toAttrs(),
-                content = { Text("Benefits") }
-            )
-        }
-        Row(
-            modifier = ServiceBPStyle.toModifier(),
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Column(
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    H5(
-                        attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = { Text("Why Choose Our IT Consulting Services? The Advantages Are Clear:") }
-                    )
-                }
-                Ul(
-                    attrs = Modifier.textAlign(TextAlign.Start).classNames("fs-6").toAttrs()
-                ) {
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Strategic Technology Planning: ") }
-                        )
-                        Text("Our IT consultants work closely with your team to create comprehensive technology roadmaps that support your business vision.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Cost Optimization: ") }
-                        )
-                        Text("We analyze your current IT setup and identify areas where cost savings can be realized without compromising quality.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Efficiency Enhancement: ") }
-                        )
-                        Text("Our solutions are geared toward streamlining processes, reducing downtime, and boosting overall productivity.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Risk Mitigation: ") }
-                        )
-                        Text("We conduct thorough security audits and develop strategies to safeguard your data and systems.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Scalability: ") }
-                        )
-                        Text("Our recommendations and solutions are scalable, ensuring they grow with your business.")
-                    }
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun ServiceOfferings() {
-    SimpleGrid(
-        modifier = Modifier.fillMaxWidth(),
-        numColumns = numColumns(base = 1, md=4)
-    ) {
-        Row(
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            H3(
-                attrs = ServiceH3Style.toModifier().width(Width.MinContent).toAttrs(),
-                content = { Text("Services") }
-            )
-        }
-        Row(
-            modifier = ServiceBPStyle.toModifier(),
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Column(
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    H5(
-                        attrs = ServiceH5Style.toModifier().toAttrs(),
-                        content = {
-                            Text("Our IT Consulting Services Cover:")
-                        }
-                    )
-                }
-                Ul(
-                    attrs = Modifier
-                        .fillMaxWidth()
-                        .textAlign(TextAlign.Start).classNames("fs-6").toAttrs()
-                ) {
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Strategic Planning: ") }
-                        )
-                        Text("We help you create a roadmap that aligns IT initiatives with your business goals.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Infrastructure Assessment: ") }
-                        )
-                        Text("Our experts evaluate your existing IT infrastructure, identifying areas for improvement.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Security Audits: ") }
-                        )
-                        Text("We assess your cybersecurity measures, recommending enhancements to protect your digital assets.")
-                    }
-                    Li {
-                        Span(
-                            attrs = Modifier
-                                .fontWeight(FontWeight.SemiBold)
-                                .toAttrs(),
-                            content = { Text("Cloud Strategy: ") }
-                        )
-                        Text("We guide you in adopting cloud technologies to enhance agility and reduce costs.")
-                    }
-                }
-            }
-        }
-    }
-
 }

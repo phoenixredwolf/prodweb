@@ -12,6 +12,22 @@ interface BaseService {
     val imgCreditPath: String
     val imgCredit: String
     val freepikImg: Boolean
+    val beneHeading: String
+    val benefits: List<AddInfo>
+    val offeringsHead: String
+    val offerings: List<AddInfo>
+    val cards: List<CardInfo>
     @Composable
-    fun icon()
+    fun menuIcon()
 }
+
+data class AddInfo(
+    val name: String,
+    val desc: String
+)
+
+data class CardInfo(
+    val icon: @Composable() ()-> Unit,
+    val title: String,
+    val desc: String
+)

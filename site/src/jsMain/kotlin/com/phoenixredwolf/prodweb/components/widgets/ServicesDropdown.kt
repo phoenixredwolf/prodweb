@@ -60,7 +60,7 @@ fun ServicesDropdown() {
                         modifier = Dropdowncardstyle.toModifier(),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        service.icon()
+                        service.menuIcon()
                         Link(
                             path = service.path,
                             text = service.title,
@@ -82,7 +82,7 @@ fun ServicesDropdown() {
                         Row(
                             modifier = Modifier.width(50.px)
                         ) {
-                            service.icon()
+                            service.menuIcon()
                         }
                         Link(
                             path = service.path,
