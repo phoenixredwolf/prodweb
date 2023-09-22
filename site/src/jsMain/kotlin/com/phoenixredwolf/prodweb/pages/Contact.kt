@@ -9,23 +9,24 @@ import com.phoenixredwolf.prodweb.theme.*
 import com.phoenixredwolf.prodweb.utility.Constants
 import com.phoenixredwolf.prodweb.utility.Constants.TOAST_LINK
 import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.css.TextDecorationLine
-import com.varabyte.kobweb.compose.foundation.layout.*
+import com.varabyte.kobweb.compose.foundation.layout.Arrangement
+import com.varabyte.kobweb.compose.foundation.layout.Box
+import com.varabyte.kobweb.compose.foundation.layout.Column
+import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.attrsModifier
-import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.navigation.Link
+import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import org.jetbrains.compose.web.attributes.InputType
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -53,14 +54,8 @@ fun Contact() {
                 numColumns = numColumns(1, md = 2)
             ) {
                 Column(
-                    modifier = Modifier.fillMaxWidth()
-                        .margin(top = 20.px)
-                        .padding(20.px)
-                        .borderRight(
-                            width = if(breakpoint >= Breakpoint.MD) 2.px else 0.px,
-                            style = LineStyle.Solid,
-                            color = if(colorMode == ColorMode.LIGHT) primaryLight else primaryDark
-                        )
+                    modifier = ContactColumnStyle.toModifier(),
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     ContactForm(breakpoint)
                 }
@@ -140,5 +135,22 @@ fun Contact() {
             }
         }
     }
+}
 
+val ContactColumnStyle by ComponentStyle {
+    base {
+        Modifier
+            .fillMaxWidth()
+            .margin(top = 20.px)
+            .padding(20.px)
+            .borderRight(width = 0.px)
+    }
+    Breakpoint.MD {
+        Modifier
+            .borderRight(
+                width = 2.px,
+                style = LineStyle.Solid,
+                color = if(colorMode == ColorMode.LIGHT) primaryLight else primaryDark
+            )
+    }
 }

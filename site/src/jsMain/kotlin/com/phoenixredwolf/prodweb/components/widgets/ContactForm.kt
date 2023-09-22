@@ -44,8 +44,6 @@ fun ContactForm(breakpoint: Breakpoint) {
             SimpleGrid(
                 modifier = Modifier
                     .columnGap(10.px)
-                    .padding(10.px)
-                    .margin(20.px)
                     .alignContent(AlignContent.SpaceEvenly),
                 numColumns = numColumns(1, lg = 2)
             ) {
@@ -192,7 +190,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                                     )
                                     Label(
                                         forId = "mobile",
-                                        attrs = FormLabelsStyle.toModifier()
+                                        attrs = FormCheckLabelStyle.toModifier()
                                             .classNames("form-check-label")
                                             .toAttrs(),
                                         content = { Text("Mobile") }
@@ -213,7 +211,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                                     )
                                     Label(
                                         forId = "landline",
-                                        attrs = FormLabelsStyle.toModifier()
+                                        attrs = FormCheckLabelStyle.toModifier()
                                             .classNames("form-check-label")
                                             .toAttrs(),
                                         content = { Text("Landline") }
@@ -264,7 +262,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                         )
                         Label(
                             forId = "checkIt",
-                            attrs = FormLabelsStyle.toModifier()
+                            attrs = FormCheckLabelStyle.toModifier()
                                 .classNames("form-check-label")
                                 .toAttrs(),
                             content = { Text("IT Services") }
@@ -284,7 +282,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                         )
                         Label(
                             forId = "checkSoft",
-                            attrs = FormLabelsStyle.toModifier()
+                            attrs = FormCheckLabelStyle.toModifier()
                                 .classNames("form-check-label")
                                 .toAttrs(),
                             content = { Text("Software Development") }
@@ -304,7 +302,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                         )
                         Label(
                             forId = "checkCloud",
-                            attrs = FormLabelsStyle.toModifier()
+                            attrs = FormCheckLabelStyle.toModifier()
                                 .classNames("form-check-label")
                                 .toAttrs(),
                             content = { Text("Cloud Services") }
@@ -324,7 +322,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                         )
                         Label(
                             forId = "checkWeb",
-                            attrs = FormLabelsStyle.toModifier()
+                            attrs = FormCheckLabelStyle.toModifier()
                                 .classNames("form-check-label")
                                 .toAttrs(),
                             content = { Text("Web Development") }
@@ -344,7 +342,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                         )
                         Label(
                             forId = "checkNet",
-                            attrs = FormLabelsStyle.toModifier()
+                            attrs = FormCheckLabelStyle.toModifier()
                                 .classNames("form-check-label")
                                 .toAttrs(),
                             content = { Text("Networking") }
@@ -364,7 +362,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                         )
                         Label(
                             forId = "checkOther",
-                            attrs = FormLabelsStyle.toModifier()
+                            attrs = FormCheckLabelStyle.toModifier()
                                 .classNames("form-check-label")
                                 .toAttrs(),
                             content = { Text("Other") }
@@ -494,8 +492,17 @@ val FormLabelsStyle by ComponentStyle {
             .fillMaxWidth()
             .color(if(colorMode == ColorMode.LIGHT) Colors.Black else onPrimaryContainerDark)
             .padding(left = 5.px)
+            .margin(top = 10.px)
             .textAlign(TextAlign.Start)
     }
+}
+
+val FormCheckLabelStyle by ComponentStyle.base() {
+    Modifier
+        .fillMaxWidth()
+        .color(if(colorMode == ColorMode.LIGHT) Colors.Black else onPrimaryContainerDark)
+        .padding(left = 5.px)
+        .textAlign(TextAlign.Start)
 }
 
 val CheckBoxStyle by ComponentStyle {
@@ -523,7 +530,7 @@ val ContactFormStyle by ComponentStyle {
             .fillMaxWidth(90.percent)
             .borderRadius(r = 10.px)
             .backgroundColor(if (colorMode == ColorMode.LIGHT) primaryContainerLight else primaryContainerDark)
-            .margin(20.px)
+//            .margin(20.px)
             .padding(20.px)
     }
 }

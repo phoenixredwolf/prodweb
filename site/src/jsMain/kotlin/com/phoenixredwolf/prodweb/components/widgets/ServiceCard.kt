@@ -87,7 +87,6 @@ val ServiceCardStyle by ComponentStyle {
             .width(300.px)
             .height(200.px)
             .transition(CSSTransition("all", duration = 500.ms))
-
     }
     hover {
         Modifier

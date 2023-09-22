@@ -122,13 +122,13 @@ fun OverflowMenu(onMenuClosed: () -> Unit) {
                     .padding(topBottom = 5.px)
             )
             Link(
-                path = "",
+                path = "/about",
                 text = "About",
                 modifier = LinkBaseStyle.toModifier()
                     .padding(topBottom = 5.px)
             )
             Link(
-                path = "",
+                path = "/contact",
                 text = "Contact",
                 modifier = LinkBaseStyle.toModifier()
                     .padding(topBottom = 5.px)

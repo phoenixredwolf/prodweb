@@ -71,15 +71,15 @@ val CardStyle by ComponentStyle {
             .boxShadow(0.px, 0.px, 10.px, 2.px, Colors.DarkGray)
             .overflow(Overflow.Hidden)
             .position(Position.Relative)
-            .size(300.px)
+            .height(300.px)
+            .width(300.px)
             .margin(numericAuto)
-            .transition(CSSTransition("all", duration = 300.ms))
+            .transition(CSSTransition("all", duration = 500.ms))
 
     }
     hover {
         Modifier
             .height(450.px)
-            .width(300.px)
     }
     cssRule(" .transition") {
         Modifier
@@ -88,7 +88,7 @@ val CardStyle by ComponentStyle {
     cssRule(":hover .cta-container") {
         Modifier
             .display(DisplayStyle.Inline)
-            .margin(top = 380.px)
+            .margin(top = 360.px)
     }
     cssRule(":hover .card_circle") {
         Modifier
@@ -109,7 +109,7 @@ val CardStyle by ComponentStyle {
     }
     cssRule(":hover p") {
         Modifier
-            .margin(top = 300.px)
+            .margin(top = 275.px)
     }
 }
 
@@ -169,7 +169,7 @@ val CtaContainerStyle by ComponentStyle{
             .position(Position.Absolute)
             .textAlign(TextAlign.Center)
             .fillMaxWidth()
-            .margin(top = 300.px, bottom = 20.px)
+            .margin( bottom = 20.px)
     }
     cssRule(" .transition") {
         Modifier
