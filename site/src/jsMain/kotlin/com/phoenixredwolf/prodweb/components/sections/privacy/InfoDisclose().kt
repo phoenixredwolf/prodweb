@@ -1,75 +1,61 @@
 package com.phoenixredwolf.prodweb.components.sections.privacy
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.AlignContent
+import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
-import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
+import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun InfoDisclose() {
-    Row(
-        modifier = Modifier
-            .classNames("collapsible", "d-flex", "flex-row")
-            .fillMaxWidth()
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.SpaceEvenly
     ) {
-        Column(
-            modifier = Modifier
-                .classNames("p-2")
-                .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceEvenly
-        ) {
-            H2(
-                attrs = Modifier
-                    .toAttrs()
-            ) {
-                Text("Information Sharing")
-            }
-            P(
-                attrs = Modifier
-                    .classNames("flex-fill", "align-middle")
-                    .fillMaxHeight()
-                    .alignContent(AlignContent.Center)
-                    .textAlign(TextAlign.End)
-                    .padding(top = 10.px)
-                    .toAttrs()
-            ) {
-                Text("Do we share our information?")
-            }
-        }
-    }
-    Row(
-        modifier = Modifier
-            .classNames("content", "d-flex", "flex-column", "mb-3")
-            .fillMaxWidth()
-            .textAlign(TextAlign.Justify)
-    ) {
-        H4(
+        H2(
             attrs = Modifier
-                .classNames("mt-3")
-                .toAttrs()
-        ) {
-            Text("Disclosure of Information")
-        }
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .toAttrs(),
+            content = { Text("Information Sharing") }
+        )
         P(
             attrs = Modifier
-                .classNames("fs-6", "mt-3")
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .fontSize(FontSize.Large)
+                .toAttrs(),
+            content = { Text("Do we share our information?") }
+        )
+        H4(
+            attrs = Modifier
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .toAttrs(),
+            content = { Text("Disclosure of Information") }
+        )
+        P(
+            attrs = Modifier
+                .fillMaxWidth()
+                .padding(top = 20.px)
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Start)
                 .toAttrs()
         ) {
             Text(
                 "PhoenixRedwolf Digital Services, L.L.C. may not use or disclose the information provided by " +
                         "you except under the following circumstances:")
-            Br()
-            Br()
-            Ul {
+            Ul(
+                attrs = Modifier.padding(left =40.px).lineHeight((2.5).cssRem).toAttrs()
+            ) {
                 Li {
                     Text("as necessary to provide services or products you have ordered;")
                 }
@@ -98,12 +84,17 @@ fun InfoDisclose() {
                 }
             }
         }
-        H4 {
-            Text("Non-Marketing Purposes")
-        }
+        H4(
+            attrs = Modifier
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .toAttrs(),
+            content = { Text("Non-Marketing Purposes")  }
+        )
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -114,12 +105,17 @@ fun InfoDisclose() {
                         "other public means to post a notice."
             )
         }
-        H4 {
-            Text("Children under the age of 13")
-        }
+        H4(
+            attrs = Modifier
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .toAttrs(),
+            content = { Text("Children under the age of 13") }
+        )
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(

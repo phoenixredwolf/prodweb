@@ -1,73 +1,59 @@
 package com.phoenixredwolf.prodweb.components.sections.privacy
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.AlignContent
+import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
-import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
+import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun InfoUse(){
-    Row(
-        modifier = Modifier
-            .classNames("collapsible", "d-flex", "flex-row")
-            .fillMaxWidth()
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.SpaceEvenly
     ) {
-        Column(
-            modifier = Modifier
-                .classNames("p-2")
-                .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceEvenly
-        ) {
-            H2(
-                attrs = Modifier
-                    .toAttrs()
-            ) {
-                Text("Information Use")
-            }
-            P(
-                attrs = Modifier
-                    .classNames("flex-fill", "align-middle")
-                    .fillMaxHeight()
-                    .alignContent(AlignContent.Center)
-                    .textAlign(TextAlign.End)
-                    .padding(top = 10.px)
-                    .toAttrs()
-            ) {
-                Text("How do we use the information we collect?")
-            }
-        }
-    }
-    Row(
-        modifier = Modifier
-            .classNames("content", "d-flex", "flex-column", "mb-3")
-            .fillMaxWidth()
-            .textAlign(TextAlign.Justify)
-    ) {
-        H4(
+        H2(
             attrs = Modifier
-                .classNames("mt-3")
-                .toAttrs()
-        ) {
-            Text("Why we collect information and for how long")
-        }
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .toAttrs(),
+            content = { Text("Information Use") }
+        )
         P(
             attrs = Modifier
-                .classNames("fs-6", "mt-3")
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .fontSize(FontSize.Large)
+                .toAttrs(),
+            content = { Text("How do we use the information we collect?") }
+        )
+        H4(
+            attrs = Modifier
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .toAttrs(),
+            content = { Text("Why we collect information and for how long") }
+        )
+        P(
+            attrs = Modifier
+                .fillMaxWidth()
+                .padding(top = 20.px)
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Start)
                 .toAttrs()
         ) {
             Text("We are collecting your data for several reasons:")
-            Br()
-            Br()
-            Ul {
+            Ul(
+                attrs = Modifier.padding(left =40.px).lineHeight((2.5).cssRem).toAttrs()
+            ) {
                 Li {
                     Text("To better understand your needs and provide you with the services you have requested;")
                 }
@@ -75,12 +61,16 @@ fun InfoUse(){
                     Text("To fulfill our legitimate interest in improving our services and products;")
                 }
                 Li {
-                    Text("To send you promotional emails containing information we think you may like when we " +
-                            "have your consent to do so;")
+                    Text(
+                        "To send you promotional emails containing information we think you may like when we " +
+                                "have your consent to do so;"
+                    )
                 }
                 Li {
-                    Text("To contact you to fill out surveys or participate in other types of market research, " +
-                            "when we have your consent to do so;")
+                    Text(
+                        "To contact you to fill out surveys or participate in other types of market research, " +
+                                "when we have your consent to do so;"
+                    )
                 }
                 Li {
                     Text("To customize our website according to your online behavior and personal preferences.")
@@ -89,7 +79,8 @@ fun InfoUse(){
         }
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -103,12 +94,18 @@ fun InfoUse(){
                         "information as stated in this Policy."
             )
         }
-        H4 {
-            Text("How we use your information")
-        }
+        H4(
+            attrs = Modifier
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .toAttrs(),
+            content = { Text("How we use your information") }
+        )
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fillMaxWidth()
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Start)
                 .toAttrs()
         ) {
             Text(
@@ -118,7 +115,8 @@ fun InfoUse(){
         }
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -131,7 +129,8 @@ fun InfoUse(){
         }
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -142,7 +141,8 @@ fun InfoUse(){
         }
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(

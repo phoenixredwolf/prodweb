@@ -1,62 +1,46 @@
 package com.phoenixredwolf.prodweb.components.sections.privacy
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.AlignContent
+import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
-import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
+import com.varabyte.kobweb.compose.ui.modifiers.fontSize
+import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.toAttrs
-import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun InfoSecurity() {
-    Row(
-        modifier = Modifier
-            .classNames("collapsible", "d-flex", "flex-row")
-            .fillMaxWidth()
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.SpaceEvenly
     ) {
-        Column(
-            modifier = Modifier
-                .classNames("p-2")
-                .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceEvenly
-        ) {
-            H2(
-                attrs = Modifier
-                    .toAttrs()
-            ) {
-                Text("Protecting Your Data")
-            }
-            P(
-                attrs = Modifier
-                    .classNames("flex-fill", "align-middle")
-                    .fillMaxHeight()
-                    .alignContent(AlignContent.Center)
-                    .textAlign(TextAlign.End)
-                    .padding(top = 10.px)
-                    .toAttrs()
-            ) {
-                Text("How do we protect your data?")
-            }
-        }
-    }
-    Row(
-        modifier = Modifier
-            .classNames("content", "d-flex", "flex-column", "mb-3")
-            .fillMaxWidth()
-            .textAlign(TextAlign.Justify)
-    ) {
+        H2(
+            attrs = Modifier
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .toAttrs(),
+            content = { Text("Protecting Your Data") }
+        )
         P(
             attrs = Modifier
-                .classNames("fs-6", "mt-3")
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .fontSize(FontSize.Large)
+                .toAttrs(),
+            content = { Text("How do we protect your data?") }
+        )
+        P(
+            attrs = Modifier
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -70,7 +54,8 @@ fun InfoSecurity() {
         }
         P(
             attrs = Modifier
-                .classNames("fs-6", "mt-3")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -84,7 +69,8 @@ fun InfoSecurity() {
         }
         P(
             attrs = Modifier
-                .classNames("fs-6", "mt-3")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(

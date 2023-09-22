@@ -1,60 +1,44 @@
 package com.phoenixredwolf.prodweb.components.sections.privacy
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.AlignContent
+import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
-import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
+import com.varabyte.kobweb.compose.ui.modifiers.fontSize
+import com.varabyte.kobweb.compose.ui.modifiers.margin
+import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.toAttrs
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun InfoCollection() {
-    Row(
+
+    Column(
         modifier = Modifier
-            .classNames("collapsible", "d-flex", "flex-row")
-            .fillMaxWidth()
+            .fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.SpaceEvenly
     ) {
-        Column(
-            modifier = Modifier
-                .classNames("p-2")
-                .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceEvenly
-        ) {
-            H2(
-                attrs = Modifier
-                    .toAttrs()
-            ) {
-                Text("Information We Collect")
-            }
-            P(
-                attrs = Modifier
-                    .classNames("flex-fill", "align-middle")
-                    .fillMaxHeight()
-                    .alignContent(AlignContent.Center)
-                    .textAlign(TextAlign.End)
-                    .padding(top = 10.px)
-                    .toAttrs()
-            ) {
-                Text("What information do we collect from our customers?")
-            }
-        }
-    }
-    Row(
-        modifier = Modifier
-            .classNames("content", "d-flex", "flex-column", "mb-3")
-            .fillMaxWidth()
-            .textAlign(TextAlign.Justify)
-    ) {
+        H2(
+            content = { Text("Information We Collect") }
+        )
         P(
             attrs = Modifier
-                .classNames("fs-6", "mt-3")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
+                .toAttrs()
+        ) {
+            Text("What information do we collect from our customers?")
+        }
+        P(
+            attrs = Modifier
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -62,9 +46,9 @@ fun InfoCollection() {
                         "if you elect not to do so, we reserve the right not to register you as a user or provide " +
                         "you with any products or services. This website collects various types of information, such as:"
             )
-            Br()
-            Br()
-            Ul {
+            Ul(
+                attrs = Modifier.margin(top = 25.px).toAttrs()
+            ) {
                 Li {
                     Text(
                         "Voluntarily provided information which may include your name, address, email address, " +
@@ -76,7 +60,8 @@ fun InfoCollection() {
         }
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -89,7 +74,8 @@ fun InfoCollection() {
         }
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -99,6 +85,6 @@ fun InfoCollection() {
                         "requested, and any additional uses specifically provided for on this Policy."
             )
         }
-
     }
+
 }

@@ -1,60 +1,48 @@
 package com.phoenixredwolf.prodweb.components.sections.privacy
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.AlignContent
+import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.css.TextAlign
-import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
-import com.varabyte.kobweb.compose.foundation.layout.Row
-import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
+import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun PrivacyIntro() {
-    Row(
+    Column(
         modifier = Modifier
-            .classNames("collapsible", "d-flex", "flex-row")
             .fillMaxWidth()
     ) {
-        Column(
-            modifier = Modifier
-                .classNames("p-2")
-                .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceEvenly
-        ) {
-            H2(
-                attrs = Modifier
-                    .toAttrs()
-            ) {
-                Text("Introduction")
-            }
-            P(
-                attrs = Modifier
-                    .classNames("flex-fill", "align-middle")
-                    .fillMaxHeight()
-                    .alignContent(AlignContent.Center)
-                    .textAlign(TextAlign.End)
-                    .padding(top = 10.px)
-                    .toAttrs()
-            ) {
-                Text("An overview of what our policy does and does not cover.")
-            }
-        }
-    }
-    Row(
-        modifier = Modifier
-            .classNames("content", "d-flex", "flex-column", "mb-3")
-            .fillMaxWidth()
-            .textAlign(TextAlign.Justify)
-    ) {
+        H1(
+            attrs = Modifier
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .toAttrs(),
+            content = { Text("Privacy Policy") }
+        )
+        H2(
+            attrs = Modifier
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .toAttrs(),
+            content = { Text("Introduction") }
+        )
         P(
             attrs = Modifier
-                .classNames("fs-6", "mt-3")
+                .fillMaxWidth()
+                .textAlign(TextAlign.Center)
+                .fontSize(FontSize.Large)
+                .toAttrs(),
+            content = { Text("An overview of what our policy does and does not cover.") }
+        )
+        P(
+            attrs = Modifier
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -68,7 +56,8 @@ fun PrivacyIntro() {
         }
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -83,7 +72,8 @@ fun PrivacyIntro() {
         }
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -94,7 +84,8 @@ fun PrivacyIntro() {
         }
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
             Text(
@@ -108,11 +99,14 @@ fun PrivacyIntro() {
         }
         P(
             attrs = Modifier
-                .classNames("fs-6")
+                .fontSize(FontSize.Large)
+                .textAlign(TextAlign.Justify)
                 .toAttrs()
         ) {
-            Text("Specifically, this Policy will inform you of the following")
-            Ol {
+            Text("Specifically, this Policy will inform you of the following:")
+            Ol(
+                attrs = Modifier.padding(left =40.px).lineHeight((2.5).cssRem).toAttrs()
+            ) {
                 Li {
                     Text("What personally identifiable information is collected from you through our website")
                 }

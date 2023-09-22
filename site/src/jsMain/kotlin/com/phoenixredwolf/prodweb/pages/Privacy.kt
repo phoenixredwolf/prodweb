@@ -26,13 +26,13 @@ fun Privacy() {
                 .fillMaxWidth(90.percent),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            PrivacyContenct()
+            PrivacyContent()
         }
     }
 }
 
 @Composable
-private fun PrivacyContenct() {
+private fun PrivacyContent() {
     Column(
         modifier = Modifier
             .fillMaxSize()
