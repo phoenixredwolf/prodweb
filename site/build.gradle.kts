@@ -1,3 +1,4 @@
+
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
 import kotlinx.html.link
 import kotlinx.html.script
@@ -47,6 +48,17 @@ kobweb {
                         zanalytics_.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'static.ziftsolutions.com/analytics/8a99822b8a8c5d9a018a8f42aae56814.js';
                         document.getElementsByTagName('script')[0].parentNode.appendChild(zanalytics_);
                         })();
+                        """.trimIndent()
+                    )
+                }
+                script(type="text/javascript") {
+                    attributes["id"] = "mcjs"
+                    consumer.onTagContent(
+                        """
+                        !function(c,h,i,m,p)
+                        {m=c.createElement(h),p=c.getElementsByTagName(h)
+                        [0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}
+                        (document,"script","https://chimpstatic.com/mcjs-connected/js/users/971f2ea437cd3a0a9a2b642c7/a15c01237599c5867b6b7a37d.js");
                         """.trimIndent()
                     )
                 }

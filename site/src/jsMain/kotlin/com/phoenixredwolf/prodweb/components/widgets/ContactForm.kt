@@ -423,7 +423,7 @@ fun ContactForm(breakpoint: Breakpoint) {
         }
 }
 
-private fun phoneMask() {
+fun phoneMask() {
     val phoneInput = document.getElementById("phone") as? HTMLInputElement
 
     phoneInput?.addEventListener("keydown", { event ->
