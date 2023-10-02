@@ -51,7 +51,11 @@ kobweb {
 //                        """.trimIndent()
 //                    )
 //                }
-                script(type="text/javascript") {
+                link {
+                    rel = "stylesheet"
+                    href = "https://fonts.googleapis.com/icon?family=Material+Icons"
+                }
+                script {
                     attributes["id"] = "mcjs"
                     consumer.onTagContent(
                         """
@@ -61,10 +65,6 @@ kobweb {
                         (document,"script","https://chimpstatic.com/mcjs-connected/js/users/971f2ea437cd3a0a9a2b642c7/a15c01237599c5867b6b7a37d.js");
                         """.trimIndent()
                     )
-                }
-                link {
-                    rel = "stylesheet"
-                    href = "https://fonts.googleapis.com/icon?family=Material+Icons"
                 }
             }
 
