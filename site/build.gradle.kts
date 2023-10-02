@@ -7,7 +7,7 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.kobweb.application)
-    alias(libs.plugins.kobwebx.markdown)
+//    alias(libs.plugins.kobwebx.markdown)
 }
 
 group = "com.phoenixredwolf.prodweb"
@@ -39,18 +39,18 @@ kobweb {
                         """.trimIndent()
                     )
                 }
-                script(type="text/javascript") {
-                    consumer.onTagContent(
-                        """
-                        (function() { var zanalytics_ = document.createElement('script'); 
-                        zanalytics_.type = 'text/javascript';
-                        zanalytics_.async = false; 
-                        zanalytics_.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'static.ziftsolutions.com/analytics/8a99822b8a8c5d9a018a8f42aae56814.js';
-                        document.getElementsByTagName('script')[0].parentNode.appendChild(zanalytics_);
-                        })();
-                        """.trimIndent()
-                    )
-                }
+//                script(type="text/javascript") {
+//                    consumer.onTagContent(
+//                        """
+//                        (function() { var zanalytics_ = document.createElement('script');
+//                        zanalytics_.type = 'text/javascript';
+//                        zanalytics_.async = false;
+//                        zanalytics_.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'static.ziftsolutions.com/analytics/8a99822b8a8c5d9a018a8f42aae56814.js';
+//                        document.getElementsByTagName('script')[0].parentNode.appendChild(zanalytics_);
+//                        })();
+//                        """.trimIndent()
+//                    )
+//                }
                 script(type="text/javascript") {
                     attributes["id"] = "mcjs"
                     consumer.onTagContent(

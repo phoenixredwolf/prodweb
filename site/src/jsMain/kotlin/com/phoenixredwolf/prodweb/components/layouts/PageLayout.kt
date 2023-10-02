@@ -55,7 +55,7 @@ fun PageLayout(
     )
     val breakpoint = rememberBreakpoint()
     var menuOpened by remember { mutableStateOf(false) }
-    var colorMode by ColorMode.currentState
+    val colorMode by ColorMode.currentState
 
     Box(
         Modifier

@@ -12,7 +12,7 @@ enum class Services: BaseService {
         override val id: String
             get() = "mis"
         override val path: String
-            get() = "https://sites.ziftsolutions.com/sandlerpartners.ziftsolutions.com/8a9983098ab12163018ab5e37b461309#z_section-contact"
+            get() = "/managed"
         override val title: String
             get() = "Managed IT Services"
         override val desc: String
