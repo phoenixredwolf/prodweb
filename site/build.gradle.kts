@@ -47,17 +47,17 @@ kobweb {
                             rel = "stylesheet"
                             href = "https://fonts.googleapis.com/icon?family=Material+Icons"
                         }
-                        script {
-                            attributes["id"] = "mcjs"
-                            consumer.onTagContent(
-                                """
-                                !function(c,h,i,m,p)
-                                {m=c.createElement(h),p=c.getElementsByTagName(h)
-                                [0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}
-                                (document,"script","https://chimpstatic.com/mcjs-connected/js/users/971f2ea437cd3a0a9a2b642c7/a15c01237599c5867b6b7a37d.js");
-                                """.trimIndent()
-                            )
-                        }
+//                        script {
+//                            attributes["id"] = "mcjs"
+//                            consumer.onTagContent(
+//                                """
+//                                !function(c,h,i,m,p)
+//                                {m=c.createElement(h),p=c.getElementsByTagName(h)
+//                                [0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}
+//                                (document,"script","https://chimpstatic.com/mcjs-connected/js/users/971f2ea437cd3a0a9a2b642c7/a15c01237599c5867b6b7a37d.js");
+//                                """.trimIndent()
+//                            )
+//                        }
                     }
                 }
             )
